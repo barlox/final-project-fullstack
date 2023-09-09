@@ -1,0 +1,142 @@
+$color-primary-0: #B0DCF9;
+$color-primary-1: #FFFFFF;
+$color-primary-2: #E3F4FE;
+$color-primary-3: #84C4EE;
+$color-primary-4: #5CA9DB;
+
+$color-secondary-1-0: #FFEAB0;
+$color-secondary-1-1: #FFFFFF;
+$color-secondary-1-2: #FFF8E2;
+$color-secondary-1-3: #FFDF86;
+$color-secondary-1-4: #FFD662;
+
+$color-secondary-2-0: #FFC4B0;
+$color-secondary-2-1: #FFFFFF;
+$color-secondary-2-2: #FFEAE2;
+$color-secondary-2-3: #FFA586;
+$color-secondary-2-4: #FF8A62;
+
+
+@mixin grd {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/* header {
+  font-family: 'Titan One', cursive;
+  font-family: 'Saira Stencil One', cursive;
+  font-family: 'Chivo Mono', monospace;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+} */
+
+.container {
+  display: grid;
+  grid-template-columns: 60px auto 60px;
+  background: radial-gradient(circle, white 35%, #E3F4FE 65%);   
+  font-family: 'Kumbh Sans', sans-serif; 
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sudoku-wrapper {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.grid-wrapper {
+  @include grd();
+  width: 66vh;
+  height: 66vh;
+  gap: 3px;
+  margin: auto;
+  background-color: #84C4EE;
+  box-sizing: border-box;
+
+  .grid {
+    @include grd();
+    gap: 1px;
+    background-color: #B0DCF9;
+
+    .btn {
+      background-color: white;
+      color: #5CA9DB; 
+      border: 0;
+      font-size: 1.3rem;
+      transition: .2s ease-in-out;
+
+      &:hover {
+        background-color: #E3F4FE;
+        color: #5CA9DB;
+        cursor: pointer;
+      }
+
+    }
+
+    .initial {
+      background-color: #E3F4FE;
+      color: #5CA9DB;
+      font-family: 'Titan One', cursive;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.keypad-wrapper {
+  .pad-btn-wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    height: 36px;
+    gap: 10px;
+    margin-bottom: 25px;
+
+    .pad-btn {
+      border: 1px solid #B0DCF9;
+      background-color: white;
+      border-radius: 5px;
+      color: #5CA9DB;
+      transition: .3s ease-in-out;
+    }
+  }
+
+  .action-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+
+    .action-btn {
+      width: 100px;
+      height: 36px;
+      background-color: #5CA9DB;
+      border: 1px solid #B0DCF9;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px #B0DCF9;
+      color: white;
+      font-size: 1.5rem;
+      font-family: "Titan One", cursive;
+      transition: 0.4s linear;
+
+      &:hover {
+        cursor: pointer;
+        background-color: white;
+        color: #5CA9DB;
+      }
+    }
+  }
+}
+

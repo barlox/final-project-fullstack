@@ -1,0 +1,31 @@
+@mixin background-img($bck-size) {
+  background-size: $bck-size;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+header {
+  display: grid;
+  height: 100vh;
+  background-color: #5CA9DB;
+
+  .brand {
+    display: grid;
+    grid-template-rows: auto repeat(8, 60px) auto;
+    color: #FFFFFF;
+    font-family: 'Titan One', cursive; 
+    
+    .letter-brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+    }
+    }
+
+    .logo-2 {
+      @include background-img(2rem);
+      background-image: url('../img/logos/brain.svg');
+    }  
+  }

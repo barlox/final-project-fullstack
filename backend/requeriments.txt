@@ -1,0 +1,27 @@
+# Este archivo es usado por pip para instalar los paquetes de python requeridos
+# Uso: pip install -r requirements.txt
+
+# Flask Framework
+
+Flask==2.3.2
+
+# Flask Packages
+
+Flask-Cors==4.0.0
+Flask-Login==0.6.2
+Flask-Mail==0.9.1
+flask-marshmallo==0.14.0
+Flask-MySQLdb==1.0.1
+Flask-SQLAlchemy==3.0.5
+
+# MySQL Packages
+
+mysql-connector-python==8.1.0
+mysqlclient==2.2.0
+PyMySQL==1.1.0
+
+# Others
+
+marshmallow==3.19.0
+marshmallow-sqlalchemy==0.28.1
+Werkzeug==2.3.6

@@ -1,0 +1,96 @@
+@mixin background-img($bck-size) {
+  background-size: $bck-size;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin link-nav($bck-img, $bck-img-blue) {
+  display: block;
+      width: 100%;
+      height: 100%;
+      @include background-img(70%);
+      background-image: url($bck-img);
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #E3F4FE;
+        cursor: pointer;
+        @include background-img(70%);
+        background-image: url($bck-img-blue);
+      }
+}
+
+
+.nav-wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 60px 60px 60px 150px auto;
+  gap: 30px;
+  background-color: #5CA9DB;
+
+  .link-nav {
+
+    .sudoku-nav {
+      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-blue.svg')
+    }
+
+    .instructions-nav {
+      @include link-nav('../img/logos/information.svg', '../img/logos/information-blue.svg')
+    }
+
+    .ranking-nav {
+      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-blue.svg')
+    }
+  }
+}
+
+/* 
+.user-logout {
+  @include background-img(70%);
+  background-image: url('../img/logos/logout.svg');
+}
+
+.logo-1 {
+  @include background-img(70%);
+  background-image: url('../img/logos/sudoku.svg');
+} */
+
+.auth-wrapper {
+  display: grid;
+  grid-template-rows: 60px 60px;
+  gap: 30px;
+
+  .link-nav {
+
+    .login-nav {
+      @include link-nav('../img/logos/login.svg', '../img/logos/login-blue.svg');     
+    }
+
+    .register-nav {
+      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-blue.svg');      
+    }
+
+  }
+}
+
+.logout-wrapper {
+  display: grid;
+  grid-template-rows: 60px 60px;
+  gap: 30px;
+
+  .link-nav {
+
+    .logout-nav {
+      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-blue.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .options-nav {
+      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-blue.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+  }
+}

@@ -1,0 +1,231 @@
+@mixin background-img {
+  background-size    : 75%;
+  background-repeat  : no-repeat;
+  background-position: center;
+}
+
+.frameworks-1 {
+  @include background-img();
+  background-image: url('../img/frameworks/1.svg');
+}
+
+.frameworks-2 {
+  @include background-img();
+  background-image: url('../img/frameworks/2.svg');
+}
+
+.frameworks-3 {
+  @include background-img();
+  background-image: url('../img/frameworks/3.svg');
+}
+
+.frameworks-4 {
+  @include background-img();
+  background-image: url('../img/frameworks/4.svg');
+}
+
+.frameworks-5 {
+  @include background-img();
+  background-image: url('../img/frameworks/5.svg');
+}
+
+.frameworks-6 {
+  @include background-img();
+  background-image: url('../img/frameworks/6.svg');
+}
+
+.frameworks-7 {
+  @include background-img();
+  background-image: url('../img/frameworks/7.svg');
+}
+
+.frameworks-8 {
+  @include background-img();
+  background-image: url('../img/frameworks/8.svg');
+}
+
+.frameworks-9 {
+  @include background-img();
+  background-image: url('../img/frameworks/9.svg');
+}
+
+.fruits-1 {
+  @include background-img();
+  background-image: url('../img/fruits/1.svg');
+}
+
+.fruits-2 {
+  @include background-img();
+  background-image: url('../img/fruits/2.svg');
+}
+
+.fruits-3 {
+  @include background-img();
+  background-image: url('../img/fruits/3.svg');
+}
+
+.fruits-4 {
+  @include background-img();
+  background-image: url('../img/fruits/4.svg');
+}
+
+.fruits-5 {
+  @include background-img();
+  background-image: url('../img/fruits/5.svg');
+}
+
+.fruits-6 {
+  @include background-img();
+  background-image: url('../img/fruits/6.svg');
+}
+
+.fruits-7 {
+  @include background-img();
+  background-image: url('../img/fruits/7.svg');
+}
+
+.fruits-8 {
+  @include background-img();
+  background-image: url('../img/fruits/8.svg');
+}
+
+.fruits-9 {
+  @include background-img();
+  background-image: url('../img/fruits/9.svg');
+}
+
+.multimedia-1 {
+  @include background-img();
+  background-image: url('../img/multimedia/1.svg');
+}
+
+.multimedia-2 {
+  @include background-img();
+  background-image: url('../img/multimedia/2.svg');
+}
+
+.multimedia-3 {
+  @include background-img();
+  background-image: url('../img/multimedia/3.svg');
+}
+
+.multimedia-4 {
+  @include background-img();
+  background-image: url('../img/multimedia/4.svg');
+}
+
+.multimedia-5 {
+  @include background-img();
+  background-image: url('../img/multimedia/5.svg');
+}
+
+.multimedia-6 {
+  @include background-img();
+  background-image: url('../img/multimedia/6.svg');
+}
+
+.multimedia-7 {
+  @include background-img();
+  background-image: url('../img/multimedia/7.svg');
+}
+
+.multimedia-8 {
+  @include background-img();
+  background-image: url('../img/multimedia/8.svg');
+}
+
+.multimedia-9 {
+  @include background-img();
+  background-image: url('../img/multimedia/9.svg');
+}
+
+.calendar-1 {
+  @include background-img();
+  background-image: url('../img/calendar/1.svg');
+}
+
+.calendar-2 {
+  @include background-img();
+  background-image: url('../img/calendar/2.svg');
+}
+
+.calendar-3 {
+  @include background-img();
+  background-image: url('../img/calendar/3.svg');
+}
+
+.calendar-4 {
+  @include background-img();
+  background-image: url('../img/calendar/4.svg');
+}
+
+.calendar-5 {
+  @include background-img();
+  background-image: url('../img/calendar/5.svg');
+}
+
+.calendar-6 {
+  @include background-img();
+  background-image: url('../img/calendar/6.svg');
+}
+
+.calendar-7 {
+  @include background-img();
+  background-image: url('../img/calendar/7.svg');
+}
+
+.calendar-8 {
+  @include background-img();
+  background-image: url('../img/calendar/8.svg');
+}
+
+.calendar-9 {
+  @include background-img();
+  background-image: url('../img/calendar/9.svg');
+}
+
+.programming-1 {
+  @include background-img();
+  background-image: url('../img/programming/1.svg');
+}
+
+.programming-2 {
+  @include background-img();
+  background-image: url('../img/programming/2.svg');
+}
+
+.programming-3 {
+  @include background-img();
+  background-image: url('../img/programming/3.svg');
+}
+
+.programming-4 {
+  @include background-img();
+  background-image: url('../img/programming/4.svg');
+}
+
+.programming-5 {
+  @include background-img();
+  background-image: url('../img/programming/5.svg');
+}
+
+.programming-6 {
+  @include background-img();
+  background-image: url('../img/programming/6.svg');
+}
+
+.programming-7 {
+  @include background-img();
+  background-image: url('../img/programming/7.svg');
+}
+
+.programming-8 {
+  @include background-img();
+  background-image: url('../img/programming/8.svg');
+}
+
+.programming-9 {
+  @include background-img();
+  background-image: url('../img/programming/9.svg');
+}
+
