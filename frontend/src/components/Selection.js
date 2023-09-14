@@ -8,7 +8,7 @@ export default function Selection(props) {
 
   const bntNumber = () => {
     return (
-      Array.from(Array(49), (_, index) => {
+      Array.from(Array(48), (_, index) => {
         return (<button
           key={`btn-num-${index + 1}`}
           className='btn-num'
@@ -29,8 +29,8 @@ export default function Selection(props) {
     <div className='selection-wrapper'>
       {
         selectCategory ?
-          <div>
-            <h2>Select sudoku number</h2>
+          <div className='category-main'>
+            <h2>Select number</h2>
             <div className='number-wrapper'>
               {bntNumber()}
             </div>

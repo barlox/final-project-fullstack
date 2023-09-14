@@ -5,41 +5,51 @@
 }
 
 .selection-wrapper {
-  width: 66vh;
-  height: 66vh;
-  background-color: #FFDF86;
+  width: 60vh;
+  height: 75vh;
+  background-color: #5ca9db;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   border-radius: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
 
-  h2 {
-    margin: 0 0 1rem;
-    color: #5CA9DB;
-    font-size: 2.5rem;
+  .category-main {
+    height: 100%;
+    display: grid;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+      color: #FFFFFF;
+      font-size: 2.5rem;
+    }
   }
+  
 
   .category-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 5px;
-    height: 60%;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
     align-items: center;
     justify-items: center;
+
 
   .category-btn {
     width: 80px;
     height: 65px;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 1rem;
-    background-color: #5F9FC9;
-    color: white;
-    font-size: 1.2rem;
+    background-color: white;
+    color: #5ca9db;
+    font-size: 1.4rem;
+    box-sizing: border-box;
 
     &:hover {
       cursor: pointer;
+      border: 2px solid #FFD662;
     }
   }
 
@@ -71,16 +81,23 @@
 
 .number-wrapper {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  grid-template-columns: repeat(6, 40px);
+  grid-template-rows: repeat(8, 30px);
+  gap: 1rem;
+  justify-content: center;
 
   .btn-num {
-    background-color: #FFF8E2;
-    border: 1px solid #5CA9DB;
+    background-color: white;
+    border: 3px solid transparent;
     color: #5CA9DB;
-    padding: 5px;
+    font-size: 1rem;
     border-radius: 5px;
-    font-weight: 600;
+    box-sizing: border-box;
+
+    &:hover {
+      cursor: pointer;
+      border: 3px solid #FFD662;
+    }
   }
 }
 }

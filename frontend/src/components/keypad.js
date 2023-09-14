@@ -118,6 +118,7 @@ export default function Keypad(props) {
               props.selectActive(true);
               props.resetTime();
               props.resetTODO();
+              props.resetStates();
             }
             }
           >
@@ -129,6 +130,7 @@ export default function Keypad(props) {
             onClick={() => {
               props.resetObjets();
               props.resetPlayTime();
+              props.resetStates();
             }
             }
           >
@@ -137,7 +139,12 @@ export default function Keypad(props) {
           <button
             id='pause'
             className='action-btn'
-            onClick={() => { props.isPaused ? props.playTimeRemote() : props.pauseTime() }}
+            onClick={() => {
+              props.isPaused ?
+                props.playTimeRemote() :
+                props.pauseTime();
+                props.resetStates();
+            }}
           >
             {props.isPaused ? 'PLAY' : 'PAUSE'}
           </button>

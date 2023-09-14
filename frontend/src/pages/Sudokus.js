@@ -7,6 +7,7 @@ import "../styles/base.scss";
 import Result from "../components/Result";
 import Timer from "../components/Timer";
 import Paused from "../components/Paused";
+import Welcome from "../components/Welcome";
 
 class Sudokus extends Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class Sudokus extends Component {
     this.resetTime = this.resetTime.bind(this);
     this.resetTODO = this.resetTODO.bind(this);
     this.resetSerendipity = this.resetSerendipity.bind(this);
+    this.resetStates = this.resetStates.bind(this);
 
   }
 
@@ -301,7 +303,14 @@ class Sudokus extends Component {
     })
   }
 
-  
+  resetStates() {
+    this.setState({
+      'padActive': false,
+      'keyActive': ''
+    })
+  }
+
+
   componentWillUnmount() {
     this.resetTime();
   }
@@ -349,9 +358,15 @@ class Sudokus extends Component {
         <div
           className="sudoku-wrapper"
         >
-          <Timer
-            timeString={this.state.timeString}
-          />
+          {
+            this.props.state.loggedInStatus === 'LOGGED_IN' && Object.values(this.state.initial).length ?
+              <Welcome
+                name={this.props.state.name}
+              /> :
+              <Timer
+                timeString={this.state.timeString}
+              />
+          }
           <SudokuTemplate
             state={this.state}
             setPadActive={this.setPadActive}
@@ -371,6 +386,7 @@ class Sudokus extends Component {
             resetPlayTime={this.resetPlayTime}
             resetTime={this.resetTime}
             isInitial={!Boolean(this.state.todo.length)}
+            resetStates={this.resetStates}
           />
         </div>
       );

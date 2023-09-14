@@ -1,8 +1,31 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 
 export default function Authorization(props) {
+
+  let classImage = '';
+  let location = useLocation();  
+
+  switch (location.pathname) {
+    case '/':
+      classImage = 'sudoku-img';
+      break;
+    case '/instructions':
+      classImage = 'instructions-img';
+      break;
+    case '/ranking':
+      classImage = 'ranking-img';
+      break;
+    case '/login':
+      classImage = 'login-img';
+      break;
+    case '/register':
+      classImage = 'register-img';
+      break;
+    default:
+      classImage = 'sudoku-img';
+  }
 
   return (
     <div
@@ -13,7 +36,7 @@ export default function Authorization(props) {
       >
         <NavLink
           to="/login"
-          className='login-nav'
+          className={`login-nav ${classImage}`}
           title='Log in'
         />
       </div>
@@ -22,7 +45,7 @@ export default function Authorization(props) {
       >
         <NavLink
           to="/register"
-          className='register-nav'
+          className={`register-nav ${classImage}`}
           title='Sign up'
         />
       </div>

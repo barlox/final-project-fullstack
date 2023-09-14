@@ -5,7 +5,7 @@ export default function SudokuTemplate(props) {
 
   const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'], nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  const { initial, ObjTODO, ObjUSER_TODO, category, todo } = props.state;
+  const { initial, ObjTODO, ObjUSER_TODO, category, todo, padActive, keyActive } = props.state;
 
   const categoryNUM = category === 'numbers';
 
@@ -33,7 +33,11 @@ export default function SudokuTemplate(props) {
                         'initial' : '' : ''}
                       ${!categoryNUM && !isInitial ?
                       category.concat('-', ObjUSER_TODO[letter.concat(num)]) :
-                      ''}`
+                      ''}
+                      ${padActive && keyActive === letter.concat(num) ?
+                      'key-active' :
+                      ''
+                    }`
                   }
                   onClick={
                     isTODO && !Boolean(ObjTODO[`${letter}${num}`]) ?

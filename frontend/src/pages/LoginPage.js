@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import '../styles/identity.scss'
 
 
 export default function LoginPage(props) {
@@ -54,87 +55,87 @@ export default function LoginPage(props) {
 
 
   return (
-    <div>
-      <div className="">
+    <div className="identity-wrapper">
 
-        <div className="">
-          <p className="">
-            Log Into Your Account
-          </p>
+      <div className="title-wrapper">
+        <h2>
+          Log Into Your Account
+        </h2>
+      </div>
+
+      <form
+        id="loginForm"
+        className="form-wrapper"
+        onSubmit={logInUser}
+      >
+
+        <div className="field-wrapper">
+          <label
+            className="label-data"
+            htmlFor="loginEmail"
+          >
+            Email address
+          </label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            id="loginEmail"
+            className="input-data"
+            placeholder="Enter a valid email address"
+          />
         </div>
 
-        <form
-          id="loginForm"
-          onSubmit={logInUser}
-        >
 
+        <div className="field-wrapper">
+          <label
+            className="label-data"
+            htmlFor="loginPassword"
+          >
+            Password
+          </label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            id="loginPassword"
+            className="input-data"
+            placeholder="Enter password"
+          />
+        </div>
+
+        <div className="">
           <div className="">
             <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              id="loginEmail"
               className=""
-              placeholder="Enter a valid email address"
+              type="checkbox"
+              onChange={(e) => setRemindme(`${e.target.checked}`)}
+              id="loginCheckbox"
             />
             <label
               className=""
-              htmlFor="loginEmail"
+              htmlFor="loginCheckbox"
             >
-              Email address
+              Remember me
             </label>
           </div>
+          <button
+            className=""
+          >
+            Forgot password?
+          </button>
+        </div>
 
+        <div className="">
+          <button
+            type="submit"
+          >
+            Login
+          </button>
+        </div>
 
-          <div className="">
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              id="loginPassword"
-              className="" placeholder="Enter password"
-            />
-            <label
-              className=""
-              htmlFor="loginPassword"
-            >
-              Password
-            </label>
-          </div>
+      </form>
 
-          <div className="">
-            <div className="">
-              <input
-                className=""
-                type="checkbox"
-                onChange={(e) => setRemindme(`${e.target.checked}`)}
-                id="loginCheckbox"
-              />
-              <label
-                className=""
-                htmlFor="loginCheckbox"
-              >
-                Remember me
-              </label>
-            </div>
-            <button
-              className=""
-            >
-              Forgot password?
-            </button>
-          </div>
-
-          <div className="">
-            <button
-              type="submit"
-            >
-              Login
-            </button>
-          </div>
-
-        </form>
-
-      </div>
     </div>
   );
 }

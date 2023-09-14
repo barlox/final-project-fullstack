@@ -8,24 +8,44 @@
 header {
   display: grid;
   height: 100vh;
+}
+
+.sudoku-color {  
   background-color: #5CA9DB;
+}
 
-  .brand {
-    display: grid;
-    grid-template-rows: auto repeat(8, 60px) auto;
-    color: #FFFFFF;
-    font-family: 'Titan One', cursive; 
-    
-    .letter-brand {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-    }
-    }
+.instructions-color {
+  background-color: #FFD662;
+}
 
-    .logo-2 {
-      @include background-img(2rem);
-      background-image: url('../img/logos/brain.svg');
-    }  
+.ranking-color {
+  background-color: #44B27D;
+}
+
+.register-color {
+  background-color: #FF8A62;
+}
+
+.login-color {
+  background-color: #FF546D;
+}
+
+
+.brand {
+  display: grid;
+  grid-template-rows: auto repeat(8, 60px) auto;
+  color: #FFFFFF;
+  font-family: 'Saira Stencil One', cursive; 
+  
+  .letter-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
   }
+  }
+
+  .logo-2 {
+    @include background-img(2rem);
+    background-image: url('../img/logos/brain.svg');
+  }  

@@ -13,33 +13,100 @@
       transition: 0.3s ease-in-out;
 
       &:hover {
-        background-color: #E3F4FE;
+        background-color: white;
         cursor: pointer;
         @include background-img(70%);
         background-image: url($bck-img-blue);
       }
 }
 
+.sudoku-color {  
+  background-color: #5CA9DB;
+}
 
-.nav-wrapper {
+.instructions-color {
+  background-color: #FFD662;
+}
+
+.ranking-color {
+  background-color: #44B27D;
+}
+
+.register-color {
+  background-color: #FF8A62;
+}
+
+.login-color {
+  background-color: #6A70E0;
+}
+
+
+nav {
   display: grid;
   height: 100vh;
   grid-template-rows: auto 60px 60px 60px 150px auto;
   gap: 30px;
-  background-color: #5CA9DB;
 
   .link-nav {
 
-    .sudoku-nav {
+    .sudoku-nav.sudoku-img {
       @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-blue.svg')
     }
 
-    .instructions-nav {
+    .instructions-nav.sudoku-img {
       @include link-nav('../img/logos/information.svg', '../img/logos/information-blue.svg')
     }
 
-    .ranking-nav {
+    .ranking-nav.sudoku-img {
       @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-blue.svg')
+    }
+
+    .sudoku-nav.instructions-img {
+      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-yellow.svg')
+    }
+
+    .instructions-nav.instructions-img {
+      @include link-nav('../img/logos/information.svg', '../img/logos/information-yellow.svg')
+    }
+
+    .ranking-nav.instructions-img {
+      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-yellow.svg')
+    }
+
+    .sudoku-nav.ranking-img {
+      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-green.svg')
+    }
+
+    .instructions-nav.ranking-img {
+      @include link-nav('../img/logos/information.svg', '../img/logos/information-green.svg')
+    }
+
+    .ranking-nav.ranking-img {
+      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-green.svg')
+    }
+
+    .sudoku-nav.register-img {
+      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-orange.svg')
+    }
+
+    .instructions-nav.register-img {
+      @include link-nav('../img/logos/information.svg', '../img/logos/information-orange.svg')
+    }
+
+    .ranking-nav.register-img {
+      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-orange.svg')
+    }
+
+    .sudoku-nav.login-img {
+      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-magenta.svg')
+    }
+
+    .instructions-nav.login-img {
+      @include link-nav('../img/logos/information.svg', '../img/logos/information-magenta.svg')
+    }
+
+    .ranking-nav.login-img {
+      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-magenta.svg')
     }
   }
 }
@@ -62,12 +129,44 @@
 
   .link-nav {
 
-    .login-nav {
+    .login-nav.sudoku-img {
       @include link-nav('../img/logos/login.svg', '../img/logos/login-blue.svg');     
     }
 
-    .register-nav {
+    .register-nav.sudoku-img {
       @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-blue.svg');      
+    }
+
+    .login-nav.instructions-img {
+      @include link-nav('../img/logos/login.svg', '../img/logos/login-yellow.svg');     
+    }
+
+    .register-nav.instructions-img {
+      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-yellow.svg');      
+    }
+
+    .login-nav.ranking-img {
+      @include link-nav('../img/logos/login.svg', '../img/logos/login-green.svg');     
+    }
+
+    .register-nav.ranking-img {
+      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-green.svg');      
+    }
+
+    .login-nav.register-img {
+      @include link-nav('../img/logos/login.svg', '../img/logos/login-orange.svg');     
+    }
+
+    .register-nav.register-img {
+      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-orange.svg');      
+    }
+
+    .login-nav.login-img {
+      @include link-nav('../img/logos/login.svg', '../img/logos/login-magenta.svg');     
+    }
+
+    .register-nav.login-img {
+      @include link-nav('../img/logos/sign-up.svg', '../img/logos//sign-up-magenta.svg');      
     }
 
   }

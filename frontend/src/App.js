@@ -54,7 +54,6 @@ export default class App extends Component {
   }
 
 
-
   render() {
     return (
       <div className='container'>
@@ -65,7 +64,10 @@ export default class App extends Component {
         <div className='center-container'>
           <Routes>
 
-            <Route path="/" element={<Sudokus />} />
+            <Route path="/" element={
+              <Sudokus
+                state={this.state}
+              />} />
             <Route path="instructions" element={<Instructions />} />
 
             {
