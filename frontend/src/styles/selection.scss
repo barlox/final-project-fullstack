@@ -6,7 +6,7 @@
 
 .selection-wrapper {
   width: 60vh;
-  height: 75vh;
+  height: 90vh;
   background-color: #5ca9db;
   display: flex;
   flex-direction: column;
@@ -15,6 +15,7 @@
   padding: 2rem;
   box-sizing: border-box;
   text-align: center;
+  border: 1rem solid #84C4EE;
 
   .category-main {
     height: 100%;
@@ -24,7 +25,7 @@
     h2 {
       margin: 0;
       color: #FFFFFF;
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
   
@@ -81,8 +82,8 @@
 
 .number-wrapper {
   display: grid;
-  grid-template-columns: repeat(6, 40px);
-  grid-template-rows: repeat(8, 30px);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   gap: 1rem;
   justify-content: center;
 

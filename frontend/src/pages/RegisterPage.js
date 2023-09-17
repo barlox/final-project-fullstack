@@ -8,19 +8,23 @@ export default function RegisterPage(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [nameField, setNameField] = useState(false);
+  const [emailField, setEmailField] = useState(false);
+  const [passwordField, setPasswordField] = useState(false);
+  const [auth, setAuth] = useState(false);
 
   const navigate = useNavigate();
 
   const registerUser = (event) => {
     event.preventDefault();
     if (name.length === 0) {
-      alert("Name has left Blank!");
+      setNameField('Name not completed!');
     }
     else if (email.length === 0) {
-      alert("Email has left Blank!");
+      setEmailField('Email not completed!');
     }
     else if (password.length === 0) {
-      alert("password has left Blank!");
+      setPasswordField("Password not completed!");
     }
     else {
       axios.post('http://127.0.0.1:5000/signup', {
@@ -41,8 +45,11 @@ export default function RegisterPage(props) {
         })
         .catch(function (error) {
           console.log(error, 'error');
-          if (error.response.status === 401) {
-            alert("Invalid credentials");
+          if (error.response.status === 409) {
+            // setAuth('The name or email already exists');
+            setAuth(error.response.data.error);
+          } else {
+            setAuth('Server failure');
           }
         });
     }
@@ -51,91 +58,117 @@ export default function RegisterPage(props) {
 
 
   return (
-    <div>
-      <div className="">
-        <p className="">
+    <div className="register-wrapper">
+
+      <div className="title-wrapper">
+        <h2>
           Create Your Account
-        </p>
+        </h2>
       </div>
 
       <form
         id="registerForm"
+        className="form-register-wrapper"
         onSubmit={registerUser}
       >
 
-        <div className="">
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            id="register-name"
-            className=""
-            placeholder="Enter your name"
-          />
+        <div className="field-wrapper">
           <label
-            className=""
+            className="label-data"
             htmlFor="register-name"
           >
             Name
           </label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+              setNameField(false);
+              setAuth(false);
+            }
+            }
+            id="register-name"
+            className={
+              `input-data ${nameField ? 'nameField' : null}`
+            }
+            placeholder={
+              nameField ?
+                nameField :
+                'Enter your name'
+            }
+          />
         </div>
 
-        <div className="">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            id="register-email"
-            className=""
-            placeholder="Enter a valid email address"
-          />
+        <div className="field-wrapper">
           <label
-            className=""
+            className="label-data"
             htmlFor="register-email"
           >
             Email address
           </label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setEmailField(false);
+              setAuth(false);
+            }
+            }
+            id="register-email"
+            className={
+              `input-data ${emailField ? 'emailField' : null}`
+            }
+            placeholder={
+              emailField ?
+                emailField :
+                'Enter a valid email address'
+            }
+          />
         </div>
 
 
-        <div className="">
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            id="register-password"
-            className=""
-            placeholder="Enter password"
-          />
+        <div className="field-wrapper">
           <label
-            className="form-label"
+            className="label-data"
             htmlFor="register-password"
           >
             Password
           </label>
-        </div>
-
-        <div className="">
           <input
-            className=""
-            type="checkbox"
-            value=""
-            id="registerCheckbox"
+            type="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setPasswordField(false);
+              setAuth(false);
+            }}
+            id="register-password"
+            className={
+              `input-data ${passwordField ? 'passwordField' : null}`
+            }
+            placeholder={
+              passwordField ?
+                passwordField :
+                'Enter password'
+            }
           />
-          <label
-            className=""
-            htmlFor="registerCheckbox"
-          >
-            Remember me
-          </label>
         </div>
 
-        <div className="">
-          <button
-            type="submit"
-          >
-            Sign Up
-          </button>
+        <div className="submit-register">
+          {
+            auth ?
+              <div className="error-login">
+                {auth}
+              </div> :
+              <button
+                type="submit"
+                className="submit-button"
+              >
+                Sign Up
+              </button>
+          }
         </div>
 
       </form>

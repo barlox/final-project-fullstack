@@ -203,7 +203,6 @@ def signup():
 def login():
   email = request.json["email"]
   password = request.json["password"]
-  remindme = request.json["remindme"]
 
   user = Users.query.filter_by(email=email).first()
 
@@ -213,9 +212,8 @@ def login():
   if not check_password_hash(user.password, password):
     return jsonify({"error": "Unauthorized"}), 401
 
-  rememberme = remindme == 'true'
 
-  login_user(user, remember=rememberme, duration=timedelta(hours=12))
+  login_user(user, duration=timedelta(hours=12))
 
   return jsonify({
     "id": user.id,

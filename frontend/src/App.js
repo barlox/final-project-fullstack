@@ -21,7 +21,9 @@ export default class App extends Component {
     this.state = {
       loggedInStatus: 'NOT_LOGGED_IN',
       name: '',
-      email: ''
+      email: '',
+      heightInner: window.innerHeight,
+      withInner: window.innerWidth
     }
 
     this.successfulAuth = this.successfulAuth.bind(this);
