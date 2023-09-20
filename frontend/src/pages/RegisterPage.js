@@ -81,6 +81,7 @@ export default function RegisterPage(props) {
           </label>
           <input
             type="text"
+            maxLength={14}
             value={name}
             onChange={(e) => {
               setName(e.target.value);

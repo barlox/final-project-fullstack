@@ -1,5 +1,6 @@
 import mysql.connector
 import json
+from werkzeug.security import check_password_hash
 
 
 mydb = mysql.connector.connect(
@@ -104,3 +105,21 @@ def checkSudokuCompleted(category, num, completed):
     return 'ok'
   else:
     return 'not ok'
+
+
+
+def checkUser(name, email, password):
+
+    sql = "SELECT password FROM users WHERE name = '{}' AND email = '{}'".format(name, email)
+
+    mycursor.execute(sql)
+
+    myresult = mycursor.fetchall()
+
+    if(len(myresult)):
+      if(check_password_hash(myresult[0][0], password)):
+        return "correct"
+      else:
+        return "incorrect"           
+    else:
+      return "error"  

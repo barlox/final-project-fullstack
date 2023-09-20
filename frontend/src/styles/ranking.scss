@@ -1,0 +1,82 @@
+.ranking-wrapper {
+  width: 60vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #44b27d;
+  border: 1rem solid #9EE4C2;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  .title-ranking {
+    color: white;
+
+    h1 {
+      margin-bottom: 0;    }
+  }
+}
+
+
+.ranking-podium-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1.2fr;
+  color: white;
+  justify-items: center;
+  width: 90%;
+  text-align: center;
+
+  .position-wrapper {
+    width: 70px;
+    display: grid;
+    justify-content: center;
+    gap: 8px;
+
+    .position-title {
+      border-bottom: 1px solid;
+    }
+
+    .position {
+      height: 45px;
+      background-color: white;
+      border-radius: 8px;
+      border: 4px solid #9ee4c2;
+      box-sizing: border-box;
+    }
+  }
+
+  .name-wrapper {
+    width: 90px;
+    display: grid;
+    justify-content: center;
+    gap: 8px;
+
+    .name-title {
+      border-bottom: 1px solid;
+    }
+
+    .name {
+      height: 45px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .time-wrapper {
+    width: 70px;
+    display: grid;
+    justify-content: center;
+    gap: 8px;
+
+    .time-title {
+      border-bottom: 1px solid;
+    }
+
+    .time {
+      height: 45px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

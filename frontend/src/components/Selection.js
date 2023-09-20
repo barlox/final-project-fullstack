@@ -38,73 +38,91 @@ export default function Selection(props) {
           <div className='category-main'>
             <h2>Select category</h2>
             <div className='category-wrapper'>
-              <button
-                className='category-btn category-numbers'
-                onClick={
-                  () => {
-                    setSelectCategory(true);
-                    props.setCategory('numbers');
-                    props.setMode('todo');
+              <div className='btn-wrapper'>
+                <div className='btn-title'>Numbers</div>
+                <button
+                  className='category-btn'
+                  onClick={
+                    () => {
+                      setSelectCategory(true);
+                      props.setCategory('numbers');
+                      props.setMode('todo');
+                    }
                   }
-                }
-              >
-                1...9
-              </button>
-              <button
-                className='category-btn category-frameworks'
-                onClick={
-                  () => {
-                    setSelectCategory(true);
-                    props.setCategory('frameworks');
-                    props.setMode('todo');
+                >
+                  1...9
+                </button>
+              </div>
+              <div className='btn-wrapper'>
+                <div className='btn-title'>Frameworks</div>
+                <button
+                  className='category-btn category-frameworks'
+                  onClick={
+                    () => {
+                      setSelectCategory(true);
+                      props.setCategory('frameworks');
+                      props.setMode('todo');
+                    }
                   }
-                }
-              >
-              </button>
-              <button
-                className='category-btn category-fruits'
-                onClick={
-                  () => {
-                    setSelectCategory(true);
-                    props.setCategory('fruits');
-                    props.setMode('todo');
+                >
+                </button>
+              </div>
+              <div className='btn-wrapper'>
+                <div className='btn-title'>Fruits</div>
+                <button
+                  className='category-btn category-fruits'
+                  onClick={
+                    () => {
+                      setSelectCategory(true);
+                      props.setCategory('fruits');
+                      props.setMode('todo');
+                    }
                   }
-                }
-              >
-              </button>
-              <button
-                className='category-btn category-multimedia'
-                onClick={
-                  () => {
-                    setSelectCategory(true);
-                    props.setCategory('multimedia');
-                    props.setMode('todo');
+                >
+                </button>
+              </div>
+              <div className='btn-wrapper'>
+                <div className='btn-title'>Multimedia</div>
+                <button
+                  className='category-btn category-multimedia'
+                  onClick={
+                    () => {
+                      setSelectCategory(true);
+                      props.setCategory('multimedia');
+                      props.setMode('todo');
+                    }
                   }
-                }
-              >
-              </button>
-              <button
-                className='category-btn category-calendar'
-                onClick={
-                  () => {
-                    setSelectCategory(true);
-                    props.setCategory('calendar');
-                    props.setMode('todo');
+                >
+                </button>
+              </div>
+              <div className='btn-wrapper'>
+                <div className='btn-title'>Calendar</div>
+                <button
+                  className='category-btn category-calendar'
+                  onClick={
+                    () => {
+                      setSelectCategory(true);
+                      props.setCategory('calendar');
+                      props.setMode('todo');
+                    }
                   }
-                }
-              >
-              </button>
-              <button
-                className='category-btn category-programming'
-                onClick={
-                  () => {
-                    setSelectCategory(true);
-                    props.setCategory('programming');
-                    props.setMode('todo');
+                >
+                </button>
+              </div>
+              <div className='btn-wrapper'>
+                <div className='btn-title'>Programming</div>
+                <button
+                  className='category-btn category-programming'
+                  onClick={
+                    () => {
+                      setSelectCategory(true);
+                      props.setCategory('programming');
+                      props.setMode('todo');
+                    }
                   }
-                }
-              >
-              </button>
+                >
+                </button>
+              </div>
             </div>
           </div>
       }

@@ -251,6 +251,29 @@ def logout():
   return jsonify({
     "message": 'logout'
   })
+  
+  
+  
+@app.post("/3JBHDP92Wwf0S7dcwl0Rew")
+def changePassword():
+  name = request.json['name']
+  email = request.json['email']
+  passwordOld = request.json['passwordOld']
+  passwordNew = request.json['passwordNew']
+  
+  check = queries.checkUser(name, email, passwordOld)
+  result = ""
+  
+  if(check == "correct"):
+    hashed_password = generate_password_hash(passwordNew)
+    update = updateTables.updateUser(email, hashed_password)
+    result = update
+  elif(check == "incorrect"):
+    result = { "result": "password incorrect" }
+  else:
+    result = { "result": "error" }
+  
+  return jsonify(result)
 
 
 

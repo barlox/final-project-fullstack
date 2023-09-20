@@ -1,5 +1,5 @@
-@mixin background-img {
-  background-size    : 60%;
+@mixin background-img($bkg-size: 60%) {
+  background-size    : $bkg-size;
   background-repeat  : no-repeat;
   background-position: center;
 }
@@ -37,47 +37,34 @@
     align-items: center;
     justify-items: center;
 
+    .btn-wrapper {
+      display: grid;
+      gap: 6px;
+      justify-content: center;
+      justify-items: center;
 
-  .category-btn {
-    width: 80px;
-    height: 65px;
-    border: 2px solid transparent;
-    border-radius: 1rem;
-    background-color: white;
-    color: #5ca9db;
-    font-size: 1.4rem;
-    box-sizing: border-box;
+      .btn-title {
+        font-size: .9rem;
+        color: white;
+      }
 
-    &:hover {
-      cursor: pointer;
-      border: 2px solid #FFD662;
+      .category-btn {
+        width: 80px;
+        height: 65px;
+        border: 2px solid transparent;
+        border-radius: 1rem;
+        background-color: white;
+        color: #5ca9db;
+        font-size: 1.4rem;
+        box-sizing: border-box;
+    
+        &:hover {
+          cursor: pointer;
+          border: 2px solid #FFD662;
+        }
     }
-  }
-
-  .category-frameworks {
-    @include background-img();
-    background-image: url('../img/frameworks/3.svg');
-  } 
-
-  .category-fruits {
-    @include background-img();
-    background-image: url('../img/fruits/3.svg');
-  }
   
-  .category-multimedia {
-    @include background-img();
-    background-image: url('../img/multimedia/1.svg');
-  }
-
-  .category-calendar {
-    @include background-img();
-    background-image: url('../img/calendar/2.svg');
-  }
-
-  .category-programming {
-    @include background-img();
-    background-image: url('../img/programming/5.svg');
-  }
+  }  
 }
 
 .number-wrapper {
@@ -101,4 +88,107 @@
     }
   }
 }
+}
+
+.category-numbers {
+  @include background-img();
+  background-image: url('../img/numbers/sudoku-num.svg');
+}
+
+.category-frameworks {
+  @include background-img();
+  background-image: url('../img/frameworks/1.svg');
+} 
+
+.category-fruits {
+  @include background-img();
+  background-image: url('../img/fruits/7.svg');
+}
+
+.category-multimedia {
+  @include background-img();
+  background-image: url('../img/multimedia/6.svg');
+}
+
+.category-calendar {
+  @include background-img();
+  background-image: url('../img/calendar/4.svg');
+}
+
+.category-programming {
+  @include background-img();
+  background-image: url('../img/programming/8.svg');
+}
+
+.less-rank {
+  @include background-img(100%);
+  background-image: url('../img/buttons/minus-green.svg');
+}
+
+.more-rank {
+  @include background-img(100%);
+  background-image: url('../img/buttons/plus-green.svg');
+}
+
+.selection-ranking-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  .selection-ranking-title {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .range-ranking {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .btn-rank {
+      width: 20px;
+      height: 20px;
+      border: none;
+      background-color: #12864E;
+
+      &:hover {
+        cursor: pointer;
+        background-color: white;
+      }
+    }
+  }
+
+  .selection {
+    width: 55px;
+    height: 50px;
+    background-color: white;
+    border-radius: 8px;
+    border: 4px solid #9ee4c2;
+    box-sizing: border-box;
+  }
+
+  .selection-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #44b27d;
+  }
+}
+
+.position-first {
+  @include background-img();
+  background-image: url('../img/medals/gold-medal.svg');
+}
+
+.position-second {
+  @include background-img();
+  background-image: url('../img/medals/silver-medal.svg');
+}
+
+.position-third {
+  @include background-img();
+  background-image: url('../img/medals/bronze-medal.svg');
 }
