@@ -101,7 +101,7 @@ sudokus_schema = SudokuSchema(many=True)
 class Ranking(db.Model):
   __tablename__ = 'ranking'
   id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(100), unique=True)
+  name = db.Column(db.String(100))
   category = db.Column(db.String(100))
   num = db.Column(db.String(100))
   time = db.Column(db.Integer)
@@ -252,7 +252,8 @@ def logout():
     "message": 'logout'
   })
   
-  
+
+# Check & Update password  
   
 @app.post("/3JBHDP92Wwf0S7dcwl0Rew")
 def changePassword():
@@ -333,6 +334,17 @@ def get_rankings():
 
   result = rankings_schema.dump(all_rankings)
 
+  return jsonify(result)
+
+
+
+@app.post('/searchTopRankings')
+def topRankings():
+  category = request.json['category']
+  num = request.json['num']
+  
+  result = queries.searchTopRankings(category, num)
+  
   return jsonify(result)
 
 

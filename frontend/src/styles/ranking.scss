@@ -31,14 +31,14 @@
     width: 70px;
     display: grid;
     justify-content: center;
-    gap: 8px;
+    gap: 1rem;
 
     .position-title {
       border-bottom: 1px solid;
     }
 
     .position {
-      height: 45px;
+      height: 40px;
       background-color: white;
       border-radius: 8px;
       border: 4px solid #9ee4c2;
@@ -47,19 +47,25 @@
   }
 
   .name-wrapper {
-    width: 90px;
+    width: 100px;
     display: grid;
-    justify-content: center;
-    gap: 8px;
+    gap: 1rem;
 
     .name-title {
       border-bottom: 1px solid;
     }
 
-    .name {
-      height: 45px;
+    .name {      
       display: flex;
+      height: 40px;
+      font-size: 14px;
       align-items: center;
+      justify-content: center;
+      background-color: white;
+      color: #44b27d;
+      border: 4px solid #9ee4c2;
+      border-radius: 8px;
+      box-sizing: border-box;
     }
   }
 
@@ -67,16 +73,25 @@
     width: 70px;
     display: grid;
     justify-content: center;
-    gap: 8px;
+    gap: 1rem;
 
     .time-title {
       border-bottom: 1px solid;
     }
 
-    .time {
-      height: 45px;
+    .time {      
       display: flex;
+      width: 85px;
+      height: 40px;
+      justify-content: center;
       align-items: center;
+      background-color: white;
+      color: #44b27d;
+      font-size: 12px;
+      font-family: 'Chivo Mono', monospace;      
+      border-radius: 8px;
+      border: 4px solid #9ee4c2;
+      box-sizing: border-box;
     }
   }
 }

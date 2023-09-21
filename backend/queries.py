@@ -62,6 +62,52 @@ def checkRanking(name, category, num, time, attemp):
     }
 
 
+
+# Consulta que solicita los tres registros de menor tiempo por category y num
+
+def searchTopRankings(category, num):
+    
+    sql = """SELECT name, time FROM ranking
+    WHERE category = '{}' AND num = '{}'
+    ORDER BY time ASC LIMIT 3""".format(category, num)
+    
+    mycursor.execute(sql)
+    
+    myresult = mycursor.fetchall()
+    
+    try:
+      return {
+          'first': {
+              'name': myresult[0][0],
+              'time': myresult[0][1]
+          },
+          'second': {
+              'name': myresult[1][0],
+              'time': myresult[1][1]
+          },
+          'third': {
+              'name': myresult[2][0],
+              'time': myresult[2][1]
+          }
+      }
+    except:
+      return {
+          'first': {
+              'name': 'noname',
+              'time': 'notime'
+          },
+          'second': {
+              'name': 'noname',
+              'time': 'notime'
+          },
+          'third': {
+              'name': 'noname',
+              'time': 'notime'
+          }
+      }
+    
+
+
 # Consulta que devuelve el sudoku para hacer (todo) o el completado (total)
 
 
@@ -123,3 +169,4 @@ def checkUser(name, email, password):
         return "incorrect"           
     else:
       return "error"  
+

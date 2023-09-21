@@ -172,6 +172,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Chivo Mono', monospace;
     font-size: 1rem;
     font-weight: 600;
     color: #44b27d;
@@ -179,16 +180,16 @@
 }
 
 .position-first {
-  @include background-img();
+  @include background-img(55%);
   background-image: url('../img/medals/gold-medal.svg');
 }
 
 .position-second {
-  @include background-img();
+  @include background-img(55%);
   background-image: url('../img/medals/silver-medal.svg');
 }
 
 .position-third {
-  @include background-img();
+  @include background-img(55%);
   background-image: url('../img/medals/bronze-medal.svg');
 }
