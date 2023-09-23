@@ -59,10 +59,17 @@ body {
   font-family: 'Poppins', sans-serif;
 } */
 
+.space-32 {
+  height: 32px;
+}
+
+.space-16 {
+  height: 16px;
+}
+
 .container {
   display: grid;
   grid-template-columns: 60px auto 60px;
-  // background: radial-gradient(circle, white 35%, #E3F4FE 65%);   
   font-family: 'Kumbh Sans', sans-serif; 
 }
 

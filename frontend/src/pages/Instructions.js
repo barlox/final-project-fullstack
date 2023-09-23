@@ -1,76 +1,93 @@
 import React from 'react';
-import {
-  ButtonBack, ButtonFirst, ButtonLast, ButtonNext, CarouselProvider, Slide, Slider,
-} from 'pure-react-carousel';
+import Carousel from "nuka-carousel";
+import RowColumnRegion from '../components/RowColumnRegion';
+import '../styles/instructions.scss'
 
 
 const Instructions = () => {
+
+
   return (
-    <CarouselProvider
-      visibleSlides={1}
-      totalSlides={4}
-      step={1}
-      naturalSlideWidth={400}
-      naturalSlideHeight={500}
-      isIntrinsicHeight
+    <Carousel
+      enableKeyboardControls={true}
     >
-      <h2 className={''}>With intrinsic axis dimension</h2>
-      <ButtonFirst>First</ButtonFirst>
-      <ButtonBack>Back</ButtonBack>
-      <ButtonNext>Next</ButtonNext>
-      <ButtonLast>Last</ButtonLast>
-      <p />
-      <Slider className={''}>
-        <Slide index={0}>
-          <h1>Slider 1</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
-        </Slide>
-        <Slide index={1}>
-          <h1>Slider 2</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi tenetur sed ea praesentium enim dolor mollitia sit est at libero aliquam minus dolorum veniam, eligendi molestias consequatur sunt velit? Ut.
-            Ullam animi, aliquid provident cupiditate debitis velit fugiat ipsam consequatur nemo nulla rerum? Ipsa fuga minima blanditiis. Neque accusantium voluptatum aliquam consequatur qui distinctio impedit, totam nulla voluptate alias tenetur!
-            Facilis ratione praesentium consectetur laborum harum totam quia culpa deleniti perspiciatis labore repudiandae consequatur fuga, veritatis natus magni! Alias iusto eum harum deserunt distinctio? Obcaecati iste dolores voluptatibus repellat voluptates.
-          </p>
-        </Slide>
-        <Slide index={2}>
-          <h1>Slider 3</h1>
-          <p>
-            lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. at vero eos et
-            accusam et justo duo dolores et ea rebum. stet clita kasd gubergren, no sea takimata
-            sanctus est lorem ipsum dolor sit amet. lorem ipsum dolor sit amet, consetetur sadipscing
-            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-            sed diam voluptua. at vero eos et accusam et justo duo dolores et ea rebum. stet clita
-            kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet.
-          </p>
-        </Slide>
-        <Slide index={3}>
-          <h1>Slider 4</h1>
-          <p>
-            Reprehenderit blanditiis harum beatae necessitatibus reiciendis quaerat corrupti.  
-            mollitia quia earum nihil a, aut sit nostrum! Corrupti id ab officia? at vero eos et
-            accusam et justo duo dolores et ea rebum. stet clita kasd gubergren, no sea takimata
-            sanctus est lorem ipsum dolor sit amet. lorem ipsum dolor sit amet, consetetur sadipscing
-            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-            sed diam voluptua. at vero eos et accusam et justo duo dolores et ea rebum. stet clita
-            kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet.
-          </p>
-        </Slide>
-      </Slider>
-      {/* <ButtonFirst>First</ButtonFirst>
-    <ButtonBack>Back</ButtonBack>
-    <ButtonNext>Next</ButtonNext>
-    <ButtonLast>Last</ButtonLast> */}
-    </CarouselProvider>
+      <div className='slide-wrapper slide-1'>
+        <h1>Sudoku</h1>
+        <div className='slide-content'>
+          Sudoku is a mathematical game that was invented in the late 1970s, gained popularity in Japan in the 1980s, and became internationally known in 2005, when numerous newspapers began publishing it in their pastimes sections.
+        </div>
+        <div className='space-32'></div>
+        <div className='slide-content'>
+          In the 18th century, the famous Swiss mathematician Leonhard Euler created a system of probabilities to represent a series of numbers without repeating themselves. For this reason, Euler is considered the inventor of this game.
+        </div>
+        <div className='space-16'></div>
+        <div className='slide-content small'>Wikipedia</div>
+      </div>
+      <div className='slide-wrapper slide-2'>
+        <h1>Game rules</h1>
+        <h2>Rows</h2>
+        <RowColumnRegion />
+        <div className='space-16'></div>
+        <div className='slide-content'>
+          In traditional Sudoku, there are nine rows. Each row must contain the
+          numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9. There cannot be repeated numbers in any of the rows. That is, there cannot be two rows in which the combination of numbers is the same.
+        </div>
+        <div className='space-16'></div>
+        <div className='slide-content'>
+          In the example, the numbers 3, 9, and 2 are the default numbers. That is, the numbers that are already placed in the game. These numbers cannot be changed. The rest of the numbers are the numbers that the player has placed to complete the row.
+        </div>
+      </div>
+      <div className='slide-wrapper slide-3'>
+        <h1>Game rules</h1>
+        <h2>Columns</h2>
+        <div className='slide-content-wrapper'>
+          <RowColumnRegion />
+          <div className='slide-content'>
+            In traditional Sudoku there are 9 columns.
+            <br />
+            The Sudoku rule for rows applies to columns. Again, there cannot be repeated numbers in the same column and the combination of numbers appearing in each of them must be unique.
+          </div>
+        </div>
+        <div className='space-16'></div>
+        <div className='slide-content'>
+          In the example, the numbers 3, 9, and 2 are the default numbers. They cannot be changed. The player must complete the rest of the numbers.
+        </div>
+      </div>
+      <div className='slide-wrapper slide-4'>
+        <h1>Game rules</h1>
+        <h2>Regions</h2>
+        <RowColumnRegion />
+        <div className='space-16'></div>
+        <div className='slide-content'>
+          A region is a 3x3 box like the one shown in the example. In traditional Sudoku there are 9 regions.
+        </div>
+        <div className='space-16'></div>
+        <div className='slide-content'>
+          As with rows and columns, each region must also contain the numbers 1, 2, 3, 4, 5, 6, 7, 8, and 9. The numbers cannot be repeated in any region. Each region must be different and unique.
+        </div>
+        <div className='space-16'></div>
+        <div className='slide-content'>
+          In the example, 3, 9, and 2 are the default numbers. The player must fill in the rest of the numbers to complete the region.
+        </div>
+      </div>
+      <div className='slide-wrapper slide-5'>
+        <h1>Summary</h1>
+        <div className='slide-content'>
+          The main rule of Sudoku is to complete it so that each row, each column and each region contains all the numbers from one to nine only once.
+        </div>
+        <div className='space-16'></div>
+        <div className='slide-content'>
+          There is only one possible solution for each correctly designed Sudoku game.
+        </div>
+        <div className='space-16'></div>
+        <div className='slide-content'>
+          On this page you will find sudokus that replace numbers with images, this adds difficulty and appeal to the game.
+          The rules are the same, do not repeat images in rows, columns or regions.
+        </div>
+        <div className='space-16'></div>
+        <div className='slide-content'>Enjoy!!!</div>
+      </div>
+    </Carousel>
   );
 };
 

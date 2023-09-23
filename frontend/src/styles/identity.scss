@@ -130,10 +130,10 @@
   }
 
   .form-register-wrapper {
-    @include inputs(#C0441A, #FFC4B0);
+    @include inputs(#806157, #FFC4B0);
 
     .field-wrapper .nameField, .field-wrapper .emailField, .field-wrapper .passwordField {      
-      border: 4px solid #C0441A;
+      border: 4px solid #806157;
 
       &::placeholder {
         opacity: 1;
