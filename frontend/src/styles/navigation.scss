@@ -40,6 +40,10 @@
   background-color: #6A70E0;
 }
 
+.settings-color {
+  background-color: #FFD662;
+}
+
 
 nav {
   display: grid;
@@ -62,15 +66,15 @@ nav {
     }
 
     .sudoku-nav.instructions-img {
-      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-yellow.svg')
+      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-pink.svg')
     }
 
     .instructions-nav.instructions-img {
-      @include link-nav('../img/logos/information.svg', '../img/logos/information-yellow.svg')
+      @include link-nav('../img/logos/information.svg', '../img/logos/information-pink.svg')
     }
 
     .ranking-nav.instructions-img {
-      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-yellow.svg')
+      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-pink.svg')
     }
 
     .sudoku-nav.ranking-img {
@@ -108,6 +112,18 @@ nav {
     .ranking-nav.login-img {
       @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-magenta.svg')
     }
+
+    .sudoku-nav.settings-img {
+      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-yellow.svg')
+    }
+
+    .instructions-nav.settings-img {
+      @include link-nav('../img/logos/information.svg', '../img/logos/information-yellow.svg')
+    }
+
+    .ranking-nav.settings-img {
+      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-yellow.svg')
+    }
   }
 }
 
@@ -138,11 +154,11 @@ nav {
     }
 
     .login-nav.instructions-img {
-      @include link-nav('../img/logos/login.svg', '../img/logos/login-yellow.svg');     
+      @include link-nav('../img/logos/login.svg', '../img/logos/login-pink.svg');     
     }
 
     .register-nav.instructions-img {
-      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-yellow.svg');      
+      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-pink.svg');      
     }
 
     .login-nav.ranking-img {
@@ -166,7 +182,15 @@ nav {
     }
 
     .register-nav.login-img {
-      @include link-nav('../img/logos/sign-up.svg', '../img/logos//sign-up-magenta.svg');      
+      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-magenta.svg');      
+    }
+
+    .login-nav.settings-img {
+      @include link-nav('../img/logos/login.svg', '../img/logos/login-yellow.svg');     
+    }
+
+    .register-nav.settings-img {
+      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-yellow.svg');      
     }
 
   }
@@ -179,14 +203,74 @@ nav {
 
   .link-nav {
 
-    .logout-nav {
+    .logout-nav.sudoku-img {
       @include link-nav('../img/logos/logout.svg', '../img/logos/logout-blue.svg');
       background-color: transparent;
       border: none;
     }
 
-    .options-nav {
+    .settings-nav.sudoku-img {
       @include link-nav('../img/logos/settings.svg', '../img/logos/settings-blue.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .logout-nav.instructions-img {
+      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-pink.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .settings-nav.instructions-img {
+      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-pink.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .logout-nav.ranking-img {
+      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-green.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .settings-nav.ranking-img {
+      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-green.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .logout-nav.login-img {
+      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-magenta.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .settings-nav.login-img {
+      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-magenta.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .logout-nav.register-img {
+      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-orange.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .settings-nav.register-img {
+      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-orange.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .logout-nav.settings-img {
+      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-yellow.svg');
+      background-color: transparent;
+      border: none;
+    }
+
+    .settings-nav.settings-img {
+      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-yellow.svg');
       background-color: transparent;
       border: none;
     }

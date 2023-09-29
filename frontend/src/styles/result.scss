@@ -1,0 +1,129 @@
+@mixin bkg-result($bkg-img) {
+  width: 20vh;
+  height: 20vh;
+  background-image: $bkg-img;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.result-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 80vh;
+  flex-direction: column;
+  background-color: #5ca9db;
+  border: 10px solid #b0dcf9;
+  box-sizing: border-box;
+  color: #fff;  
+
+  .hasard {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+
+    .hasard-title {
+      h2 {
+        color: #80EDB9;
+        font-size: 1.5rem;
+      }
+    }
+
+    .hasard-bkg-img {
+      @include bkg-result(url('../img/backgrounds/checked.svg'));
+    }
+
+    .hasard-result {
+      h3 {
+        color: #80edb9;
+      }
+
+      .hasard-time {
+        color: white;
+        font-weight: 600;
+        font-family: 'Chivo Mono', monospace;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        height: 35px;
+        align-items: center;
+        background-color: #13bf6c;
+        border: 2px solid #80edb9;
+        border-radius: 8px;
+        margin: auto;
+      }
+    }
+
+    .btns-result {
+      button {
+        background-color: transparent;
+        border: 3px solid #b0dcf9;
+        color: white;
+        font-size: 1.2rem;
+        transition: .2s linear;
+        width: 120px;
+        font-family: 'Titan One', cursive;
+        height: 35px;
+        border-radius: 8px;
+
+        &:hover {
+          cursor: pointer;
+          color: #5CA9DB;
+          background-color: white;
+        }
+      }
+    }
+    
+  }
+
+  .prosopagnosia {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+
+    .prosopagnosia-title {
+      h2 {
+        color: #FF703F;
+        font-size: 1.5rem;
+      }      
+    }
+
+    .prosopagnosia-bkg-img {
+      @include bkg-result(url('../img/backgrounds/cancel.svg'));
+    }
+
+    .prosopagnosia-suggestion {
+      color: #b0dcf9;
+    }
+
+    .btns-result {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+
+      button {
+        background-color: transparent;
+        border: 3px solid #b0dcf9;
+        color: white;
+        font-size: 1.2rem;
+        transition: .2s linear;
+        width: 120px;
+        font-family: 'Titan One', cursive;
+        height: 35px;
+        border-radius: 8px;
+
+        &:hover {
+          cursor: pointer;
+          color: #5CA9DB;
+          background-color: white;
+        }
+      }
+    }
+  }
+}

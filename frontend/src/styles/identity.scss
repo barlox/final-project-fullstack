@@ -1,15 +1,14 @@
 @mixin forms($bkg-color, $border-color) {
-  width: 60vh;
-  height: 90vh;
+  width: 80vh;
+  height: 100vh;
   display: grid;
   justify-content: center;
   justify-items: center;
   align-items: center;
   grid-template-rows: 15% auto;
   background-color: $bkg-color;
-  border-radius: 8px;
   color: white;
-  border: 16px solid $border-color;
+  border: 10px solid $border-color;
   box-sizing: border-box;
 
   .title-wrapper {
@@ -31,6 +30,7 @@
     display: grid;
     grid-template-rows: $rows;
     height: 95%;
+    width: 45vh;
     align-items: center;
     text-align: center;
   
@@ -61,16 +61,16 @@
   }  
 
 
-  @mixin submits($color-color) {
+  @mixin submits($color-color, $border-color) {
     .submit-button {
-      font-family: 'Titan One', cursive;
+      width: 150px;
+      height: 45px;
+      font-family: "Titan One", cursive;
       background-color: transparent;
-      border: 1px solid;
+      border: 4px solid $border-color;
       font-size: 1.4rem;
       color: white;
-      padding: 6px;
-      width: 100%;
-      border-radius: 50%;
+      border-radius: 8px;
       transition: 0.2s linear;
 
       &:hover {
@@ -112,7 +112,7 @@
     }
 
     .submit-login {
-      @include submits(#6A70E0);
+      @include submits(#6A70E0, #BFC1F8);
 
       .error-login {
         padding: 8px;
@@ -141,7 +141,7 @@
     }
 
     .submit-register {
-      @include submits(#ff8a62);
+      @include submits(#ff8a62, #ffc4b0);
 
       .error-login {
         padding: 8px;
@@ -156,7 +156,6 @@
 
  .form-recover-wrapper {
     @include inputs(#2B33BF, #bfc1f8, repeat(3, 1fr));
-    width: 75%;
 
     .field-wrapper .emailField {
       color: #ff8a62;
@@ -164,7 +163,7 @@
     }
 
   .submit-recover {
-    @include submits(#6A70E0);
+    @include submits(#6A70E0, #BFC1F8);
 
     .error-login {
       padding: 8px;

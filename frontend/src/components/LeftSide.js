@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from 'react-router-dom';
-import '../styles/header.scss';
+// import '../styles/header.scss';
 
 
 export default function LeftSide(props) {
@@ -25,6 +25,9 @@ export default function LeftSide(props) {
       break;
     case '/register':
       classStyle = 'register-color';
+      break;
+    case '/settings':
+      classStyle = 'settings-color';
       break;
     default:
       classStyle = 'sudoku-color';

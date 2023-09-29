@@ -1,12 +1,11 @@
 .slider-container {
   display: grid;
-  width: 60vh;
-  height: 90vh;
+  width: 80vh;
+  height: 100vh;
   overflow: hidden;
   background-color: #E6789D;
   color: white;
-  border: 1rem solid #F9C6D7;  
-  border-radius: 8px;
+  border: 10px solid #F9C6D7;  
   box-sizing: border-box;
 
   .slide-wrapper {
@@ -17,12 +16,12 @@
 
     h1 {
       text-align: center;
-      margin: 2rem 0;
-      font-size: 1.5rem;
+      margin: 3rem 0;
+      font-size: 2rem;
     }
 
     h2 {
-      margin-top: 0;
+      margin: 0;
       font-size: 1.2rem;
     }
 

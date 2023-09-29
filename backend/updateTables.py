@@ -29,7 +29,7 @@ def updateUser(email, password):
   except:
     
     return {
-      'result': 'error'
+      'result': 'not updated'
       }
 
 

@@ -1,0 +1,108 @@
+  
+  .settings-wrapper {
+    width: 80vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;  
+    background-color: #FFD662;
+    color: #C0951A;
+    border: 10px solid #FFEAB0;
+    box-sizing: border-box;
+
+    .settings-title {
+      display: grid;
+      justify-items: center;
+      gap: 3vh;
+      width: 50vh;
+
+      h2 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  
+
+  .form-settings-wrapper {
+    display: grid;
+    gap: 5vh;
+    width: 40vh;
+    box-sizing: border-box;
+
+    .field-wrapper {
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+      gap: 1vh;
+
+      .input-data {
+        width: 40vh;
+        text-align: center;
+        color: #C0951A;
+        height: 6vh;
+        border: 4px solid #ffeab0;
+        border-radius: 8px;
+        box-sizing: border-box;
+
+        &:focus-visible {
+          outline: 2px solid white;
+        }
+      }
+      
+      .input-data.currentPasswordField, 
+      .input-data.newPasswordField,
+      .input-data.newPasswordRepeatField {
+        outline: 2px solid #C0771A;
+        color: #C0771A;
+
+        &::placeholder {
+          opacity: 1;
+        }
+      }
+    }
+
+    .submit-settings {
+      display: grid;
+      justify-content: center;
+      margin-top: 4vh;
+
+      .submit-button {
+        width: 38vh;
+        height: 8vh;
+        background-color: transparent;
+        box-sizing: border-box;
+        border: 4px solid #ffeab0;
+        border-radius: 8px;
+        font-family: 'Titan One', cursive;
+        font-size: 1.2rem;
+        color: #C0951A;
+        transition: 0.2s linear;
+
+        &:hover {
+          border-color: #C0951A;
+          background-color: white;
+          cursor: pointer;
+        }
+      }
+
+      .error-settings {
+        width: 40vh;
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #C0951A;
+        color: white;
+        border: 4px solid #ffeab0;
+        box-sizing: border-box;
+      }
+    }
+  }
+  

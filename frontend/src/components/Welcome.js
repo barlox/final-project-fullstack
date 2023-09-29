@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/welcome.scss'
+// import '../styles/welcome.scss'
 
 
 export default function Welcome(props) {
@@ -9,7 +9,7 @@ export default function Welcome(props) {
     <div
       className="welcome-wrapper"
     >
-      <h1>{`${props.name.toUpperCase()} !!!`}</h1>
+      <h1>{`Welcome ${props.name.toUpperCase()}`}</h1>
     </div>
   )
 }

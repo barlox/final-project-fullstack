@@ -74,6 +74,7 @@ export default function RecoverPassword(props) {
           </label>
           <input
             type="email"
+            autoFocus
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);

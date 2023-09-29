@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/sudoku-images.scss';
-import '../styles/buttons.scss';
+// import '../styles/sudoku-images.scss';
+// import '../styles/buttons.scss';
 
 export default function Keypad(props) {
 

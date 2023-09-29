@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import '../styles/identity.scss'
+// import '../styles/identity.scss'
 import RecoverPassword from "../components/recoverPassword";
 
 
@@ -98,6 +98,7 @@ export default function LoginPage(props) {
             </label>
             <input
               type="email"
+              autoFocus
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);

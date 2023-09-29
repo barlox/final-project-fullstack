@@ -26,11 +26,11 @@ def sendMail(app, name, email):
     msg = Message('Sudokers recovery', sender = 'sudokers@gmx.com', recipients = [email])
     msg.html = '''
     <div>
-      <h1>Recuperación de contraseña</h1>
+      <h1>Password recovery</h1>
       <hr/>
-      <p>Hola {}.</p>
-      <p>Esta es tu nueva contraseña: <b>'{}'</b> , puedes modificarla en tu perfil de ajustes.</p>
-      <p>Un saludo<br/>El equipo de Sudokers</p>
+      <p>Hello {}.</p>
+      <p>This is your new password: <b>'{}'</b> , you can change it in your profile settings.</p>
+      <p>Greetings<br/>The Sudokers team</p>
     </div>  '''.format(name, password)
     mail.send(msg)
     

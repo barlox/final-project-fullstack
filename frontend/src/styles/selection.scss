@@ -5,22 +5,20 @@
 }
 
 .selection-wrapper {
-  width: 60vh;
-  height: 90vh;
+  width: 80vh;
+  height: 100vh;
   background-color: #5ca9db;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
-  border-radius: 1rem;
-  padding: 2rem;
   box-sizing: border-box;
   text-align: center;
-  border: 1rem solid #84C4EE;
+  border: 10px solid #84C4EE;
 
   .category-main {
-    height: 100%;
     display: grid;
-    align-items: center;
+    gap: 10vh;  
+    align-content: flex-start;
+    padding-top: 10vh;
 
     h2 {
       margin: 0;
@@ -33,9 +31,7 @@
   .category-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 3rem;
-    align-items: center;
-    justify-items: center;
+    gap: 8vh 12vh;
 
     .btn-wrapper {
       display: grid;
@@ -147,10 +143,12 @@
     gap: 1rem;
 
     .btn-rank {
-      width: 20px;
+      background-color: #12864e;
+      outline: 1px solid #9ee4c2;
       height: 20px;
-      border: none;
-      background-color: #12864E;
+      width: 20px;
+      border-radius: 50%;
+      border: 0;
 
       &:hover {
         cursor: pointer;

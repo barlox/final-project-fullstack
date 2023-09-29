@@ -3,15 +3,18 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
+import axios from 'axios';
 // import Layout from "./pages/Layout";
 import Sudokus from "./pages/Sudokus";
 import Instructions from "./pages/Instructions";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from './pages/RegisterPage';
 import Ranking from "./pages/Ranking";
+import Settings from './pages/Settings';
 import NoPage from "./pages/NoPage";
 import LeftSide from './components/LeftSide';
 import RightSide from './components/RightSide';
+import './styles/base.scss'
 
 
 export default class App extends Component {
@@ -30,6 +33,7 @@ export default class App extends Component {
     this.successfulLogout = this.successfulLogout.bind(this);
     this.setCredentials = this.setCredentials.bind(this);
     this.deleteCredentials = this.deleteCredentials.bind(this);
+    this.checkLoginStatus = this.checkLoginStatus.bind(this);
   }
 
   successfulAuth() {
@@ -53,6 +57,27 @@ export default class App extends Component {
       name: '',
       email: ''
     })
+  }
+
+  checkLoginStatus() {
+    axios.get('http://127.0.0.1:5000/islogged', {
+      withCredentials: true
+    })
+    .then(response => {
+      console.log(response.data);
+      this.setState({
+        loggedInStatus: response.data.message,
+        name: response.data.name,
+        email: response.data.email
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
+  componentDidMount() {
+    this.checkLoginStatus();
   }
 
 
@@ -90,6 +115,17 @@ export default class App extends Component {
             }
 
             <Route path="ranking" element={<Ranking />} />
+
+            {
+              this.state.loggedInStatus === 'LOGGED_IN' ?
+                <Route path="settings" element={
+                  <Settings
+                    name={this.state.name}
+                    email={this.state.email}
+                  />} /> :
+                null
+            }
+
             <Route path="*" element={<NoPage />} />
 
           </Routes>

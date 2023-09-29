@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../styles/ranking.scss'
+// import '../styles/ranking.scss'
 
 
 export default class Ranking extends Component {
@@ -127,11 +127,11 @@ export default class Ranking extends Component {
   render() {
     return (
       <div className='ranking-wrapper'>
-
+        <div className='space-32'></div>
         <div className='title-ranking'>
           <h1>Ranking</h1>
         </div>
-
+        <div className='space-32'></div>
         <div className='selection-ranking-wrapper'>
 
           <div className='selection-ranking-title'>
@@ -165,7 +165,7 @@ export default class Ranking extends Component {
             </button>
           </div>
         </div>
-
+        <div className='space-32'></div>
         <div className='selection-ranking-wrapper'>
 
           <div className='selection-ranking-title'>Sudoku</div>
@@ -195,7 +195,7 @@ export default class Ranking extends Component {
             </button>
           </div>
         </div>
-        <div className='space'></div>
+        <div className='space-32'></div>
         <div className='ranking-podium-wrapper'>
           <div className='position-wrapper'>
             <div className='position-title'>Position</div>

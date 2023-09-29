@@ -5,7 +5,7 @@ import { NavLink, useLocation } from "react-router-dom";
 export default function Authorization(props) {
 
   let classImage = '';
-  let location = useLocation();  
+  const location = useLocation();  
 
   switch (location.pathname) {
     case '/':

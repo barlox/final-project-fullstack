@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from "nuka-carousel";
 import RowColumnRegion from '../components/RowColumnRegion';
-import '../styles/instructions.scss'
+// import '../styles/instructions.scss'
 
 
 const Instructions = () => {
@@ -26,8 +26,9 @@ const Instructions = () => {
       <div className='slide-wrapper slide-2'>
         <h1>Game rules</h1>
         <h2>Rows</h2>
+        <div className='space-32'></div>
         <RowColumnRegion />
-        <div className='space-16'></div>
+        <div className='space-32'></div>
         <div className='slide-content'>
           In traditional Sudoku, there are nine rows. Each row must contain the
           numbers 1, 2, 3, 4, 5, 6, 7, 8 and 9. There cannot be repeated numbers in any of the rows. That is, there cannot be two rows in which the combination of numbers is the same.
@@ -40,24 +41,27 @@ const Instructions = () => {
       <div className='slide-wrapper slide-3'>
         <h1>Game rules</h1>
         <h2>Columns</h2>
+        <div className='space-32'></div>
         <div className='slide-content-wrapper'>
           <RowColumnRegion />
           <div className='slide-content'>
             In traditional Sudoku there are 9 columns.
-            <br />
+            <div className='space-16'></div>
             The Sudoku rule for rows applies to columns. Again, there cannot be repeated numbers in the same column and the combination of numbers appearing in each of them must be unique.
+            <div className='space-16'></div>
+            <div className='slide-content'>
+              In the example, the numbers 3, 9, and 2 are the default numbers. They cannot be changed. The player must complete the rest of the numbers.
+            </div>
           </div>
         </div>
-        <div className='space-16'></div>
-        <div className='slide-content'>
-          In the example, the numbers 3, 9, and 2 are the default numbers. They cannot be changed. The player must complete the rest of the numbers.
-        </div>
+
       </div>
       <div className='slide-wrapper slide-4'>
         <h1>Game rules</h1>
         <h2>Regions</h2>
+        <div className='space-32'></div>
         <RowColumnRegion />
-        <div className='space-16'></div>
+        <div className='space-32'></div>
         <div className='slide-content'>
           A region is a 3x3 box like the one shown in the example. In traditional Sudoku there are 9 regions.
         </div>

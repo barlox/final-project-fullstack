@@ -3,7 +3,7 @@ import axios from 'axios';
 import SudokuTemplate from "../components/SudokuTemplate";
 import Keypad from "../components/keypad";
 import Selection from "../components/Selection";
-import "../styles/base.scss";
+// import "../styles/base.scss";
 import Result from "../components/Result";
 import Timer from "../components/Timer";
 import Paused from "../components/Paused";
@@ -54,6 +54,7 @@ class Sudokus extends Component {
     this.resetTODO = this.resetTODO.bind(this);
     this.resetSerendipity = this.resetSerendipity.bind(this);
     this.resetStates = this.resetStates.bind(this);
+    this.stopTime = this.stopTime.bind(this);
 
   }
 
@@ -78,18 +79,6 @@ class Sudokus extends Component {
 
         this.resetPlayTime();
 
-        /* this.setState ({
-          'time': this.setZero()
-        });
-
-        if (this.state.playTime) {
-          this.pauseTime();
-        }
-
-        this.setState({
-          'playTime': this.playTime()
-        });         */
-
       })
       .catch((error) => {
         console.log(error, 'error');
@@ -111,7 +100,7 @@ class Sudokus extends Component {
           });
         } else {
           this.setState({
-            'serendipity': 'prosopagnosie'
+            'serendipity': 'prosopagnosia'
           });
         }
       })
@@ -174,7 +163,7 @@ class Sudokus extends Component {
 
     if (ObjUserTodo.filter(value => value).length === 81) {
       this.checkSudokuCompleted(this.state.num, this.state.category, ObjUserTodo);
-      this.pauseTime();
+      this.stopTime();
     }
 
   }
@@ -222,6 +211,10 @@ class Sudokus extends Component {
 
   playTime() {
 
+    this.setState({
+      'isPaused': false
+    })
+
     const play = setInterval(() => {
       const time = this.state.time;
       const getTime = time.getTime();
@@ -232,8 +225,7 @@ class Sudokus extends Component {
 
       this.setState({
         'time': time,
-        'timeString': timeNow,
-        'isPaused': false
+        'timeString': timeNow
       });
 
     }, 1000);
@@ -253,6 +245,10 @@ class Sudokus extends Component {
     this.setState({
       'isPaused': true
     });
+  }
+
+  stopTime() {
+    clearInterval(this.state.playTime);
   }
 
   resetObjets() {
@@ -320,11 +316,14 @@ class Sudokus extends Component {
 
     if (this.state.serendipity) {
       return (
-        <div className="sudoku-wrapper">
           <Result
+            name={this.props.state.name}
+            loggedInStatus={this.props.state.loggedInStatus}
             serendipity={this.state.serendipity}
             category={this.state.category}
             num={this.state.num}
+            timeString={this.state.timeString}
+            time={this.state.time}
             selectActive={this.selectActive}
             resetTime={this.resetTime}
             resetTODO={this.resetTODO}
@@ -332,11 +331,10 @@ class Sudokus extends Component {
             resetSerendipity={this.resetSerendipity}
             playTimeRemote={this.playTimeRemote}
           />
-        </div>
       );
     } else if (this.state.selectActive) {
       return (
-        <div className="sudoku-wrapper">
+        <div className="sudoku-selection">
           <Selection
             setCategory={this.setCategory}
             selectActive={this.selectActive}
@@ -347,7 +345,7 @@ class Sudokus extends Component {
       );
     } else if (this.state.isPaused) {
       return (
-        <div className="sudoku-wrapper">
+        <div className="sudoku-paused">
           <Paused
             playTimeRemote={this.playTimeRemote}
           />

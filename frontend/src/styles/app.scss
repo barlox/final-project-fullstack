@@ -48,7 +48,7 @@ $color-secondary-4-4: #12864E;
 
 body {
   margin: 0;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 /* header {
@@ -60,37 +60,59 @@ body {
 } */
 
 .space-32 {
+  width: 100%;
   height: 32px;
 }
 
 .space-16 {
+  width: 100%;
   height: 16px;
 }
 
+.space-10vh {
+  height: 10vh;
+  width: 100%;
+}
+
 .container {
+  width: 100vw;
+  height: 100vh;
   display: grid;
   grid-template-columns: 60px auto 60px;
   font-family: 'Kumbh Sans', sans-serif; 
 }
 
 .center-container {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('../img/backgrounds/white-brick-wall.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 
   .no-found {
     background-image: url('../img/backgrounds/NoFound-404.svg');
-    width: 65vh;
-    height: 90vh;
+    width: 80vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
+    border: 10px solid #B0DCF9;
+    box-sizing: border-box;
   }
 }
 
 .sudoku-wrapper {
+  width: 80vh;
+  height: 100vh;
   display: grid;
+  grid-template-rows: 12vh 60vh auto;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;  
+  background-color: #5ca9db;
+  border: 10px solid #B0DCF9;
+  box-sizing: border-box;
 }
 
 .grid-wrapper {
@@ -100,7 +122,7 @@ body {
   gap: 3px;
   margin: auto;
   background-color: #84C4EE;
-  box-sizing: border-box;
+  outline: 5px solid #84C4EE;
 
   .grid {
     @include grd();
@@ -112,10 +134,10 @@ body {
       color: #5CA9DB; 
       border: 0;
       font-size: 1.3rem;
-      transition: .2s ease-in-out;
+      transition: .1s ease-in-out;
 
       &:hover {
-        background-color: #E3F4FE;
+        background-color: #FFEAB0;
         color: #5CA9DB;
         cursor: pointer;
       }
@@ -130,29 +152,35 @@ body {
     .initial {
       background-color: #e3f4fe;
       color: #5ca9db;
-      font-family: 'Titan One', cursive;
-      font-size: 1.5rem;
+      font-family: 'Kumbh Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
     }
   }
 }
 
 .keypad-wrapper {
+  display: grid;
+  gap: 1.5rem;
+
   .pad-btn-wrapper {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    height: 36px;
-    gap: 10px;
-    margin-bottom: 25px;
+    gap: 2%;
+    grid-template-columns: repeat(10,1fr);
+    height: 5.5vh;
+    width: 66vh;
 
     .pad-btn {
-      border: 1px solid #B0DCF9;
-      background-color: white;
+      background-color: #fff;
+      outline: 2px solid #b0dcf9;
       border-radius: 5px;
-      color: #5CA9DB;
-      transition: .3s ease-in-out;
+      color: #5ca9db;
+      transition: .2s linear;
+      border: 0;
 
       &:hover {
-        background-color: #FFEAB0;
+        outline: 2px solid #1B78B4;
+        cursor: pointer;
       }
     }
   }
@@ -164,17 +192,76 @@ body {
 
     .action-btn {
       background-color: transparent;
-      border: none;
-      color: #5ca9db;
-      font-family: 'Saira Stencil One', cursive;
-      font-size: 1.4rem;
-      height: 2.2rem;
-      transition: .4s linear;
-      border-bottom: 2px solid;
+      border: 2px solid #b0dcf9;
+      color: white;
+      font-size: 1rem;
+      transition: .2s linear;
+      width: 100px;
+      font-family: 'Titan One', cursive;
+      justify-self: center;
+      height: 35px;
+      border-radius: 8px;
 
       &:hover {
         cursor: pointer;
-        letter-spacing: 2px;
+        color: #5CA9DB;
+        background-color: white;
+      }
+    }
+  }
+}
+
+
+.sudoku-paused {
+  width: 80vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background-color: #5ca9db;
+  color: white;
+  border: 10px solid #B0DCF9;
+  box-sizing: border-box;
+
+  .paused-wrapper {
+    display: grid;
+    justify-items: center;
+  }
+
+  .paused-title {
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+      color: #B0DCF9;
+    }
+  }
+
+  .paused-bkg-img {
+    height: 35vh;
+    width: 35vh;
+    background-image: url('../img//backgrounds/break.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .paused-btn {
+    button {
+      background-color: transparent;
+      border: 2px solid #b0dcf9;
+      color: white;
+      font-size: 1.2rem;
+      transition: .2s linear;
+      width: 150px;
+      font-family: 'Titan One', cursive;
+      justify-self: center;
+      height: 45px;
+      border-radius: 8px;
+
+      &:hover {
+        cursor: pointer;
+        color: #5CA9DB;
+        background-color: white;
       }
     }
   }

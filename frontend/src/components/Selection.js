@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/selection.scss';
+// import '../styles/selection.scss';
 
 
 export default function Selection(props) {

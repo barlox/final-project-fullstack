@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import Authorization from "./Authorization";
 import Logout from "./Logout";
-import '../styles/navigation.scss'
+// import '../styles/navigation.scss'
 
 
 export default function RightSide(props) {
@@ -30,6 +30,10 @@ export default function RightSide(props) {
     case '/register':
       classStyle = 'register-color';
       classImage = 'register-img';
+      break;
+    case '/settings':
+      classStyle = 'settings-color';
+      classImage = 'settings-img';
       break;
     default:
       classStyle = 'sudoku-color';

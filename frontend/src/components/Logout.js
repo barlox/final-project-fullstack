@@ -1,11 +1,38 @@
 import React from "react";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation  } from "react-router-dom";
 
 
 
 export default function Logout(props) {
+
   const navigate = useNavigate();
+  const location = useLocation();
+  let classImage = '';
+  
+
+  switch (location.pathname) {
+    case '/':
+      classImage = 'sudoku-img';
+      break;
+    case '/instructions':
+      classImage = 'instructions-img';
+      break;
+    case '/ranking':
+      classImage = 'ranking-img';
+      break;
+    case '/login':
+      classImage = 'login-img';
+      break;
+    case '/register':
+      classImage = 'register-img';
+      break;
+    case '/settings':
+      classImage = 'settings-img';
+      break;  
+    default:
+      classImage = 'sudoku-img';
+  }
 
   const logout = () => {
     axios.get('http://127.0.0.1:5000/logout')
@@ -29,7 +56,7 @@ export default function Logout(props) {
         className='link-nav'
       >
         <button
-          className="logout-nav"
+          className={`logout-nav ${classImage}`}
           onClick={logout}
           title="Log out"
         >
@@ -38,11 +65,11 @@ export default function Logout(props) {
       <div
         className='link-nav'
       >
-        <button
-          className="options-nav"
-          title="Options"
-        >
-        </button>
+      <NavLink
+          to="/settings"
+          className={`settings-nav ${classImage}`}
+          title="Settings"
+        />
       </div>
     </div>
   )

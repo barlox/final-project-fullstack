@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/sudoku-images.scss';
+// import '../styles/sudoku-images.scss';
+
 
 export default function SudokuTemplate(props) {
 
