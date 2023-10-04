@@ -4,7 +4,6 @@ import {
   Route
 } from 'react-router-dom';
 import axios from 'axios';
-// import Layout from "./pages/Layout";
 import Sudokus from "./pages/Sudokus";
 import Instructions from "./pages/Instructions";
 import LoginPage from "./pages/LoginPage";

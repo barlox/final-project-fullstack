@@ -8,18 +8,8 @@ from forgotPassword import sendMail
 import updateTables
 import postTables
 import queries
-import uuid
 from datetime import timedelta
 
-
-sudokuRanking = {
-    'post': str(uuid.uuid4()),
-    'put': str(uuid.uuid4())
-}
-
-sudokuGet = {
-    'uuid': str(uuid.uuid4())
-}
 
 
 app = Flask(__name__, static_folder='./build', static_url_path='/')
@@ -156,7 +146,18 @@ def load_user(id):
 
 
 @app.route('/')
+@app.route('/instructions')
+@app.route('/login')
+@app.route('/register')
+@app.route('/ranking')
+@app.route('/settings')
 def index():
+    return app.send_static_file('index.html')
+
+
+@app.errorhandler(404)
+def not_found(e):
+
     return app.send_static_file('index.html')
 
 
@@ -183,7 +184,6 @@ def signup():
 
     login_user(new_user)
 
-
     return jsonify({
         "id": new_user.id,
         "name": new_user.name,
@@ -206,7 +206,6 @@ def login():
 
     login_user(user, duration=timedelta(hours=12))
 
-
     return jsonify({
         "id": user.id,
         "email": user.email,
@@ -223,16 +222,18 @@ def recovery():
     if user is None:
         return jsonify({"error": "email does not exist"}), 404
 
-    password = sendMail(app, queries.checkUsername(email), email)
+    result = sendMail(app, queries.checkUsername(email), email)
 
-    if password != 'failed':
-        hashed_password = generate_password_hash(password)
+    if result['password'] != 'failed':
+        hashed_password = generate_password_hash(result['password'])
         updateTables.updateUser(email, hashed_password)
 
         return jsonify({"result": "updated"})
 
     else:
-        return jsonify({"result": "wrong email or server failure"}), 500
+        return jsonify({"result": "wrong email or server failure",
+                        "response": result['result']
+                        }), 500
 
 
 @app.get("/logout")
@@ -284,7 +285,6 @@ def changePassword():
         return jsonify({"result": "not found"}), 404
     else:
         return jsonify({"result": "error"}), 500
-
 
 
 @app.post('/sudokus')

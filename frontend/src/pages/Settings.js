@@ -135,7 +135,7 @@ export default function Settings(props) {
         <div className="field-wrapper">
           <label
             className="label-data"
-            htmlFor="newPassword"
+            htmlFor="newPasswordRepeat"
           >
             Confirm Password
           </label>
@@ -147,7 +147,7 @@ export default function Settings(props) {
               setNewPasswordRepeatField(false);
               setAuth(false);
             }}
-            id="newPassword"
+            id="newPasswordRepeat"
             className={
               `input-data ${newPasswordRepeatField ? 'newPasswordRepeatField' : ''}`
             }

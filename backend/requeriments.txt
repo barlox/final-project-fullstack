@@ -1,5 +1,5 @@
 # Este archivo es usado por pip para instalar los paquetes de python requeridos
-# Uso: pip install -r requirements.txt
+# Uso: pip install -r requeriments.txt
 
 # Flask Framework
 
@@ -10,7 +10,7 @@ Flask==2.3.2
 Flask-Cors==4.0.0
 Flask-Login==0.6.2
 Flask-Mail==0.9.1
-flask-marshmallo==0.14.0
+flask-marshmallow==0.14.0
 Flask-MySQLdb==1.0.1
 Flask-SQLAlchemy==3.0.5
 
