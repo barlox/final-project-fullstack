@@ -5,25 +5,24 @@
 }
 
 .selection-wrapper {
-  width: 80vh;
-  height: 100vh;
+  width: calc(var(--width) * 0.8);
+  height: var(--height);
   background-color: #5ca9db;
   display: grid;
   justify-content: center;
   box-sizing: border-box;
   text-align: center;
-  border: 10px solid #84C4EE;
+  border: 0.5rem solid #84C4EE;
 
   .category-main {
     display: grid;
-    gap: 10vh;  
-    align-content: flex-start;
-    padding-top: 10vh;
+    gap: 3.5rem;  
+    align-content: center;
 
     h2 {
       margin: 0;
       color: #FFFFFF;
-      font-size: 2rem;
+      font-size: 1.9rem;
     }
   }
   
@@ -31,32 +30,33 @@
   .category-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8vh 12vh;
+    gap: 3rem;
 
     .btn-wrapper {
       display: grid;
-      gap: 6px;
+      gap: 0.38rem;
       justify-content: center;
       justify-items: center;
 
       .btn-title {
-        font-size: .9rem;
+        font-size: calc(var(--height) * 0.024);
+        line-height: calc(var(--height) * 0.03);
         color: white;
       }
 
       .category-btn {
-        width: 80px;
-        height: 65px;
-        border: 2px solid transparent;
-        border-radius: 1rem;
+        width: calc(var(--height) * 0.12);
+        height: calc(var(--height) * 0.1);
+        border: 0.2rem solid transparent;
+        border-radius: 0.25rem;
         background-color: white;
         color: #5ca9db;
-        font-size: 1.4rem;
+        font-size: calc(var(--height) * 0.03);
         box-sizing: border-box;
     
         &:hover {
           cursor: pointer;
-          border: 2px solid #FFD662;
+          border: 0.2rem solid #FFD662;
         }
     }
   
@@ -67,20 +67,20 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  gap: 1rem;
+  gap: 0.5rem;
   justify-content: center;
 
   .btn-num {
     background-color: white;
-    border: 3px solid transparent;
+    border: 0.2rem solid transparent;
     color: #5CA9DB;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 0.25rem;
     box-sizing: border-box;
 
     &:hover {
       cursor: pointer;
-      border: 3px solid #FFD662;
+      border: 0.2rem solid #FFD662;
     }
   }
 }
@@ -130,7 +130,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 
   .selection-ranking-title {
     font-size: 1rem;
@@ -145,8 +145,8 @@
     .btn-rank {
       background-color: #12864e;
       outline: 1px solid #9ee4c2;
-      height: 20px;
-      width: 20px;
+      height: 1.3rem;
+      width: 1.3rem;
       border-radius: 50%;
       border: 0;
 
@@ -158,11 +158,11 @@
   }
 
   .selection {
-    width: 55px;
-    height: 50px;
+    width: 3.3rem;
+    height: 3.2rem;
     background-color: white;
-    border-radius: 8px;
-    border: 4px solid #9ee4c2;
+    border-radius: 0.25rem;
+    border: 0.2rem solid #9ee4c2;
     box-sizing: border-box;
   }
 

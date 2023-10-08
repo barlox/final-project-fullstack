@@ -35,7 +35,7 @@ export default function Logout(props) {
   }
 
   const logout = () => {
-    axios.get('http://127.0.0.1:5000/logout')
+    axios.get('https://sudokers.eu.pythonanywhere.com/logout')
       .then(function (response) {
         console.log(response);
         //console.log(response.data);

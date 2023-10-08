@@ -1,6 +1,6 @@
 @mixin bkg-result($bkg-img) {
-  width: 20vh;
-  height: 20vh;
+  width: calc(var(--width) * 0.2);
+  height: calc(var(--width) * 0.2);
   background-image: $bkg-img;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,11 +9,11 @@
 
 .result-wrapper {
   display: flex;
-  height: 100vh;
-  width: 80vh;
+  height: var(--height);
+  width: calc(var(--width) * 0.8);
   flex-direction: column;
   background-color: #5ca9db;
-  border: 10px solid #b0dcf9;
+  border: 0.25rem solid #b0dcf9;
   box-sizing: border-box;
   color: #fff;  
 
@@ -45,14 +45,14 @@
         color: white;
         font-weight: 600;
         font-family: 'Chivo Mono', monospace;
-        width: 100px;
+        width: 6rem;
         display: flex;
         justify-content: center;
-        height: 35px;
+        height: 2.2rem;
         align-items: center;
         background-color: #13bf6c;
-        border: 2px solid #80edb9;
-        border-radius: 8px;
+        border: 0.2rem solid #80edb9;
+        border-radius: 0.25rem;
         margin: auto;
       }
     }
@@ -60,14 +60,14 @@
     .btns-result {
       button {
         background-color: transparent;
-        border: 3px solid #b0dcf9;
+        border: 0.2rem solid #b0dcf9;
         color: white;
         font-size: 1.2rem;
         transition: .2s linear;
-        width: 120px;
+        width: 8rem;
         font-family: 'Titan One', cursive;
-        height: 35px;
-        border-radius: 8px;
+        height: 2rem;
+        border-radius: 0.25rem;
 
         &:hover {
           cursor: pointer;
@@ -109,14 +109,14 @@
 
       button {
         background-color: transparent;
-        border: 3px solid #b0dcf9;
+        border: 0.2rem solid #b0dcf9;
         color: white;
         font-size: 1.2rem;
         transition: .2s linear;
-        width: 120px;
+        width: 8rem;
         font-family: 'Titan One', cursive;
-        height: 35px;
-        border-radius: 8px;
+        height: 2rem;
+        border-radius: 0.25rem;
 
         &:hover {
           cursor: pointer;

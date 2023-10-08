@@ -27,7 +27,7 @@ export default function RegisterPage(props) {
       setPasswordField("Password not completed!");
     }
     else {
-      axios.post('http://127.0.0.1:5000/signup', {
+      axios.post('https://sudokers.eu.pythonanywhere.com/signup', {
         name: name,
         email: email,
         password: password
@@ -92,7 +92,7 @@ export default function RegisterPage(props) {
             }
             id="register-name"
             className={
-              `input-data ${nameField ? 'nameField' : null}`
+              `input-data ${nameField ? 'nameField' : ''}`
             }
             placeholder={
               nameField ?
@@ -120,7 +120,7 @@ export default function RegisterPage(props) {
             }
             id="register-email"
             className={
-              `input-data ${emailField ? 'emailField' : null}`
+              `input-data ${emailField ? 'emailField' : ''}`
             }
             placeholder={
               emailField ?
@@ -148,7 +148,7 @@ export default function RegisterPage(props) {
             }}
             id="register-password"
             className={
-              `input-data ${passwordField ? 'passwordField' : null}`
+              `input-data ${passwordField ? 'passwordField' : ''}`
             }
             placeholder={
               passwordField ?

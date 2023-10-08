@@ -59,7 +59,7 @@ class Sudokus extends Component {
   }
 
   getNewSudokuTodo(value) {
-    axios.post('http://127.0.0.1:5000/sudokus', {
+    axios.post('https://sudokers.eu.pythonanywhere.com/sudokus', {
       category: this.state.category,
       num: value,
       mode: this.state.mode
@@ -87,7 +87,7 @@ class Sudokus extends Component {
   }
 
   checkSudokuCompleted(num, category, sudokuToCheck) {
-    axios.post('http://127.0.0.1:5000/sudokuCheck', {
+    axios.post('https://sudokers.eu.pythonanywhere.com/sudokuCheck', {
       num: num,
       category: category,
       completed: sudokuToCheck
@@ -354,7 +354,9 @@ class Sudokus extends Component {
     } else {
       return (
         <div
-          className="sudoku-wrapper"
+          className={
+            `sudoku-wrapper ${Object.values(this.state.initial).length ? 'sudoku-initial' : ''}`
+            }
         >
           {
             this.props.state.loggedInStatus === 'LOGGED_IN' && Object.values(this.state.initial).length ?

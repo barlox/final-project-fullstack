@@ -32,7 +32,7 @@ export default function Settings(props) {
       setAuth("Wrong confirmation!");
     }
     else {
-      axios.patch('http://127.0.0.1:5000/checkandupdatepassword', {
+      axios.patch('https://sudokers.eu.pythonanywhere.com/checkandupdatepassword', {
         name: props.name,
         email: props.email,
         passwordOld: currentPassword,
@@ -51,7 +51,7 @@ export default function Settings(props) {
             setAuth("Wrong name and/or email!")
           }
           else if (error.response.status === 409) {
-            setAuth("Conflict with current server status!")
+            setAuth("Conflict server status!")
           }
           else {
             setAuth('Server failure!');

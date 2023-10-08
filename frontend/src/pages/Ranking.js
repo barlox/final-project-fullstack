@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import '../styles/ranking.scss'
 
 
 export default class Ranking extends Component {
@@ -34,7 +33,7 @@ export default class Ranking extends Component {
 
 
   getRankings(category, num) {
-    axios.post('http://127.0.0.1:5000/searchTopRankings', {
+    axios.post('https://sudokers.eu.pythonanywhere.com/searchTopRankings', {
       category: category,
       num: num
     })
@@ -195,10 +194,10 @@ export default class Ranking extends Component {
             </button>
           </div>
         </div>
-        <div className='space-32'></div>
+        <div className='space-16'></div>
         <div className='ranking-podium-wrapper'>
           <div className='position-wrapper'>
-            <div className='position-title'>Position</div>
+            <div className='position-title'>Pos.</div>
             <div className='position position-first'></div>
             <div className='position position-second'></div>
             <div className='position position-third'></div>

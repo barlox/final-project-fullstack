@@ -2,14 +2,21 @@
   display: flex;
   justify-content: center;
   justify-self: center;
+  width: 8rem;
+  height: 2.2rem;
+  background-color: transparent;
+  border: 0.2rem solid #B0DCF9;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+
 
   .timer {
     padding: 0;
     font-family: "Chivo Mono", monospace;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300;
     border: 0;
-    color: #B0DCF9;
+    color: white;
     background-color: transparent;
     text-align: center;
 

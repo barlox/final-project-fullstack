@@ -14,15 +14,14 @@
   justify-content: center;
 
   .initial-btn {
-    width: 6rem;
-    height: 2rem;
+    width: 8rem;
+    height: 2.5rem;
     background-color: #5CA9DB;
-    border: 1px solid #B0DCF9;
-    border-radius: 6px;
+    border: 0.2rem solid #B0DCF9;
+    border-radius: 0.25rem;
     color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1.2rem;
+    font-family: "Titan One", cursive;
     transition: 0.2s linear;
 
     &:hover {

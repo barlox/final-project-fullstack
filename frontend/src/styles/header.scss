@@ -7,7 +7,7 @@
 
 header {
   display: grid;
-  height: 100vh;
+  height: var(--height);
 }
 
 .sudoku-color {  
@@ -33,7 +33,7 @@ header {
 
 .brand {
   display: grid;
-  grid-template-rows: auto repeat(8, 60px) auto;
+  grid-template-rows: auto repeat(8, calc(var(--height) * 0.1)) auto;
   color: #FFFFFF;
   font-family: 'Saira Stencil One', cursive; 
   
@@ -41,11 +41,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   }
 
   .logo-2 {
-    @include background-img(2rem);
+    @include background-img(1.5rem);
     background-image: url('../img/logos/brain.svg');
   }  

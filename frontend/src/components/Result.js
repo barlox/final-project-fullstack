@@ -13,7 +13,7 @@ export default function Result(props) {
   }
 
   const updateRanking = () => {
-    axios.post('http://127.0.0.1:5000/ranking/checkRanking', {
+    axios.post('https://sudokers.eu.pythonanywhere.com/ranking/checkRanking', {
       name: props.name,
       category: props.category,
       num: props.num,

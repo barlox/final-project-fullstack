@@ -28,7 +28,7 @@ export default function LoginPage(props) {
       setPasswordField("Password not completed!");
     }
     else {
-      axios.post('http://127.0.0.1:5000/login', {
+      axios.post('https://sudokers.eu.pythonanywhere.com/login', {
         email: email,
         password: password
       }, {
@@ -108,7 +108,7 @@ export default function LoginPage(props) {
               }
               id="loginEmail"
               className={
-                `input-data ${emailField ? 'emailField' : null}`
+                `input-data ${emailField ? 'emailField' : ''}`
               }
               placeholder={
                 emailField ?
@@ -136,7 +136,7 @@ export default function LoginPage(props) {
               }}
               id="loginPassword"
               className={
-                `input-data ${passwordField ? 'passwordField' : null}`
+                `input-data ${passwordField ? 'passwordField' : ''}`
               }
               placeholder={
                 passwordField ?

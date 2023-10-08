@@ -33,6 +33,9 @@ export default class App extends Component {
     this.setCredentials = this.setCredentials.bind(this);
     this.deleteCredentials = this.deleteCredentials.bind(this);
     this.checkLoginStatus = this.checkLoginStatus.bind(this);
+    this.checkSize = this.checkSize.bind(this);
+
+    window.addEventListener('resize', this.checkSize)
   }
 
   successfulAuth() {
@@ -59,26 +62,48 @@ export default class App extends Component {
   }
 
   checkLoginStatus() {
-    axios.get('http://127.0.0.1:5000/islogged', {
+    axios.get('https://sudokers.eu.pythonanywhere.com/islogged', {
       withCredentials: true
     })
-    .then(response => {
-      console.log(response.data);
+      .then(response => {
+        // console.log(response.data);
+        this.setState({
+          loggedInStatus: response.data.message,
+          name: response.data.name,
+          email: response.data.email
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  checkSize() {
+    const html = document.querySelector(':root');
+
+    if (window.innerHeight > window.innerWidth) {
+      html.style.setProperty('--width', `${window.innerWidth}px`);
+      html.style.setProperty('--height', `${window.innerHeight}px`);
+    }
+    else {
+      html.style.setProperty('--width', `${window.innerHeight}px`);
+      html.style.setProperty('--height', `${window.innerHeight}px`);
+    }
+
+    /* if (this.state.heightInner !== window.innerHeight || this.state.withInner !== window.innerWidth) {
       this.setState({
-        loggedInStatus: response.data.message,
-        name: response.data.name,
-        email: response.data.email
-      });
-    })
-    .catch(error => {
-      console.log(error);
-    })
+        heightInner: window.innerHeight,
+        withInner: window.innerWidth
+      })
+    } */
   }
 
   componentDidMount() {
     this.checkLoginStatus();
+    this.checkSize();
   }
 
+    
 
   render() {
     return (

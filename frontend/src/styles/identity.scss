@@ -1,6 +1,6 @@
 @mixin forms($bkg-color, $border-color) {
-  width: 80vh;
-  height: 100vh;
+  width: calc(var(--width) * 0.8);
+  height: var(--height);
   display: grid;
   justify-content: center;
   justify-items: center;
@@ -8,18 +8,18 @@
   grid-template-rows: 15% auto;
   background-color: $bkg-color;
   color: white;
-  border: 10px solid $border-color;
+  border: 0.25rem solid $border-color;
   box-sizing: border-box;
 
   .title-wrapper {
     align-self: end;
 
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 500;
       font-family: 'Kumbh Sans', sans-serif;
       margin: 0;
-      border-bottom: 2px solid;
+      border-bottom: 0.12rem solid;
       line-height: 3rem;
     }
   }
@@ -30,25 +30,26 @@
     display: grid;
     grid-template-rows: $rows;
     height: 95%;
-    width: 45vh;
+    //width: calc(var(--width) * 0.45);
     align-items: center;
     text-align: center;
   
     .field-wrapper {
       display: flex;
+      width: calc(var(--height) * 0.35);
       flex-direction: column;
       gap: 0.5rem;
   
       .input-data {
-        border: 4px solid $border-color;
-        border-radius: 8px;
+        border: 0.2rem solid $border-color;
+        border-radius: 0.25rem;
         font-size: 0.9rem;
-        padding: 8px;
+        padding: 0.5rem;
         text-align: center;
         color: $color-color;
 
         &:focus-visible {
-          outline: 2px solid white;
+          outline: 0.12rem solid white;
         }
       }
   
@@ -63,14 +64,14 @@
 
   @mixin submits($color-color, $border-color) {
     .submit-button {
-      width: 150px;
-      height: 45px;
+      width: 8rem;
+      height: 2.5rem;
       font-family: "Titan One", cursive;
       background-color: transparent;
-      border: 4px solid $border-color;
-      font-size: 1.4rem;
+      border: 0.2rem solid $border-color;
+      font-size: 1.2rem;
       color: white;
-      border-radius: 8px;
+      border-radius: 0.25rem;
       transition: 0.2s linear;
 
       &:hover {
@@ -91,14 +92,14 @@
 
     .field-wrapper .emailField, .field-wrapper .passwordField {
       color: #ff8a62;
-      border: 4px solid #ff8a62;
+      border: 0.25rem solid #ff8a62;
     }
 
     .forgot-wrapper {
       .forgot-button {
         border: 0;
         background-color: transparent;
-        border-bottom: 1px solid;
+        border-bottom: 0.065rem solid;
         font-size: 1.2rem;
         color: white;
         line-height: 2rem;
@@ -106,7 +107,7 @@
 
         &:hover {
           cursor: pointer;
-          letter-spacing: 1px;
+          letter-spacing: 0.065rem;
         }
       }
     }
@@ -115,12 +116,12 @@
       @include submits(#6A70E0, #BFC1F8);
 
       .error-login {
-        padding: 8px;
+        padding: 0.5rem;
         background-color: #ff8a62;
         color: white;
         font-weight: 600;
-        border-radius: 8px;
-        border: 2px solid;
+        border-radius: 0.25rem;
+        border: 0.2rem solid;
       }
     }
   }
@@ -131,9 +132,12 @@
 
   .form-register-wrapper {
     @include inputs(#806157, #FFC4B0);
+    width: calc(var(--height) * 0.4);
+    justify-content: center;
 
-    .field-wrapper .nameField, .field-wrapper .emailField, .field-wrapper .passwordField {      
-      border: 4px solid #806157;
+    .field-wrapper .nameField, .field-wrapper .emailField, .field-wrapper .passwordField {  
+      border: 0.25rem solid #806157;
+      
 
       &::placeholder {
         opacity: 1;
@@ -144,12 +148,12 @@
       @include submits(#ff8a62, #ffc4b0);
 
       .error-login {
-        padding: 8px;
+        padding: 0.5rem;
         background-color: #E5673C;
         color: white;
         font-weight: 600;
-        border-radius: 8px;
-        border: 2px solid;
+        border-radius: 0.25rem;
+        border: 0.2rem solid;
       }
     }
   }
@@ -159,19 +163,19 @@
 
     .field-wrapper .emailField {
       color: #ff8a62;
-      border: 4px solid #ff8a62;
+      border: 0.25rem solid #ff8a62;
     }
 
   .submit-recover {
     @include submits(#6A70E0, #BFC1F8);
 
     .error-login {
-      padding: 8px;
+      padding: 0.5rem;
       background-color: #ff8a62;
       color: white;
       font-weight: 600;
-      border-radius: 8px;
-      border: 2px solid;
+      border-radius: 0.25rem;
+      border: 0.2rem solid;
     }
   }
  }

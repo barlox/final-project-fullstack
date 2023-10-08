@@ -1,28 +1,30 @@
 .ranking-wrapper {
-  width: 80vh;
-  height: 100vh;
+  width: calc(var(--width) * 0.8);
+  height: var(--height);
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #44b27d;
-  border: 10px solid #9EE4C2;
+  border: 0.25rem solid #9EE4C2;
   box-sizing: border-box;
 
   .title-ranking {
     color: white;
 
     h1 {
-      margin: 0;    }
+      margin: 0;
+    }
   }
 }
 
 
 .ranking-podium-wrapper {
   display: grid;
-  grid-template-columns: 1fr 2fr 1.5fr;
+  grid-template-columns: max-content 45% max-content;
   color: white;
   justify-items: center;
-  width: 85%;
+  justify-content: center;
+  width: 90%;
   height: 60%;
   text-align: center;
   gap: 3%;
@@ -32,17 +34,14 @@
     display: grid;
     justify-content: center;
     align-content: center;
-    gap: 10%;
-
-    .position-title {
-      border-bottom: 1px solid;
-    }
+    gap: 8%;
 
     .position {
-      height: 40px;
+      width: 3.2rem;
+      height: 2.8rem;
       background-color: white;
-      border-radius: 8px;
-      border: 4px solid #9ee4c2;
+      border-radius: 0.25rem;
+      border: 0.2rem solid #9ee4c2;
       box-sizing: border-box;
     }
   }
@@ -51,23 +50,20 @@
     width: 100%;
     display: grid;
     align-content: center;
-    gap: 10%;
-
-    .name-title {
-      border-bottom: 1px solid;
-    }
+    gap: 8%;
 
     .name {      
       display: flex;
-      height: 40px;
-      font-size: 14px;
+      height: 2.8rem;
+      font-size: 0.85rem;
       align-items: center;
       justify-content: center;
       background-color: white;
       color: #44b27d;
-      border: 4px solid #9ee4c2;
-      border-radius: 8px;
+      border: 0.2rem solid #9ee4c2;
+      border-radius: 0.25rem;
       box-sizing: border-box;
+      padding: 0 0.5rem;
     }
   }
 
@@ -75,25 +71,21 @@
     display: grid;
     justify-content: center;
     align-content: center;
-    gap: 10%;
-
-    .time-title {
-      border-bottom: 1px solid;
-    }
+    gap: 8%;
 
     .time {      
       display: flex;
-      width: 85px;
-      height: 40px;
+      height: 2.8rem;
       justify-content: center;
       align-items: center;
       background-color: white;
       color: #44b27d;
-      font-size: 12px;
+      font-size: 0.85rem;
       font-family: 'Chivo Mono', monospace;      
-      border-radius: 8px;
-      border: 4px solid #9ee4c2;
+      border-radius: 0.25rem;
+      border: 0.2rem solid #9ee4c2;
       box-sizing: border-box;
+      padding: 0 0.5rem;
     }
   }
 }
