@@ -1,5 +1,4 @@
 import React from "react";
-// import '../styles/timer.scss'
 
 
 export default function Timer(props) {
@@ -9,6 +8,7 @@ export default function Timer(props) {
       <input
         type="text"
         className="timer"
+        name="chronometer"
         readOnly
         value={props.timeString}
       />

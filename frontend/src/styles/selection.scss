@@ -1,18 +1,12 @@
-@mixin background-img($bkg-size: 60%) {
-  background-size    : $bkg-size;
-  background-repeat  : no-repeat;
-  background-position: center;
-}
-
 .selection-wrapper {
   width: calc(var(--width) * 0.8);
   height: var(--height);
-  background-color: #5ca9db;
+  background-color: $color-skyblue-3;
   display: grid;
   justify-content: center;
   box-sizing: border-box;
   text-align: center;
-  border: 0.5rem solid #84C4EE;
+  border: 0.25rem solid $color-skyblue-2;
 
   .category-main {
     display: grid;
@@ -21,7 +15,7 @@
 
     h2 {
       margin: 0;
-      color: #FFFFFF;
+      color: $color-white;
       font-size: 1.9rem;
     }
   }
@@ -41,7 +35,7 @@
       .btn-title {
         font-size: calc(var(--height) * 0.024);
         line-height: calc(var(--height) * 0.03);
-        color: white;
+        color: $color-white;
       }
 
       .category-btn {
@@ -49,14 +43,14 @@
         height: calc(var(--height) * 0.1);
         border: 0.2rem solid transparent;
         border-radius: 0.25rem;
-        background-color: white;
-        color: #5ca9db;
+        background-color: $color-white;
+        color: $color-skyblue-3;
         font-size: calc(var(--height) * 0.03);
+        font-family: $Kumbh;
         box-sizing: border-box;
     
-        &:hover {
-          cursor: pointer;
-          border: 0.2rem solid #FFD662;
+        &:active {
+          border: 0.2rem solid $color-yellow-3;
         }
     }
   
@@ -71,16 +65,20 @@
   justify-content: center;
 
   .btn-num {
-    background-color: white;
+    width: 1.6rem;
+    height: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-white;
     border: 0.2rem solid transparent;
-    color: #5CA9DB;
-    font-size: 1rem;
-    border-radius: 0.25rem;
+    color: $color-skyblue-3;
+    font-size: 0.8rem;
+    font-family: $Kumbh;
     box-sizing: border-box;
 
-    &:hover {
-      cursor: pointer;
-      border: 0.2rem solid #FFD662;
+    &:active {
+      border: 0.15rem solid $color-yellow-3;
     }
   }
 }
@@ -117,12 +115,12 @@
 }
 
 .less-rank {
-  @include background-img(100%);
+  @include background-img(cover);
   background-image: url('../img/buttons/minus-green.svg');
 }
 
 .more-rank {
-  @include background-img(100%);
+  @include background-img(cover);
   background-image: url('../img/buttons/plus-green.svg');
 }
 
@@ -134,7 +132,7 @@
 
   .selection-ranking-title {
     font-size: 1rem;
-    color: white;
+    color: $color-white;
   }
 
   .range-ranking {
@@ -143,16 +141,14 @@
     gap: 1rem;
 
     .btn-rank {
-      background-color: #12864e;
-      outline: 1px solid #9ee4c2;
-      height: 1.3rem;
-      width: 1.3rem;
-      border-radius: 50%;
+      background-color: $color-green-4;
+      outline: 0.12rem solid $color-white;
+      height: 1rem;
+      width: 1.2rem;
       border: 0;
 
-      &:hover {
-        cursor: pointer;
-        background-color: white;
+      &:active {
+        background-color: $color-white;
       }
     }
   }
@@ -160,9 +156,9 @@
   .selection {
     width: 3.3rem;
     height: 3.2rem;
-    background-color: white;
+    background-color: $color-white;
     border-radius: 0.25rem;
-    border: 0.2rem solid #9ee4c2;
+    border: 0.2rem solid $color-green-0;
     box-sizing: border-box;
   }
 
@@ -170,10 +166,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Chivo Mono', monospace;
+    font-family: $Chivo;
     font-size: 1rem;
     font-weight: 600;
-    color: #44b27d;
+    color: $color-green-2;
   }
 }
 

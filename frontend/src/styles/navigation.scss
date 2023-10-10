@@ -1,47 +1,25 @@
-@mixin background-img($bck-size) {
-  background-size: $bck-size;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-@mixin link-nav($bck-img, $bck-img-blue) {
-  display: block;
-      width: 100%;
-      height: 100%;
-      @include background-img(75%);
-      background-image: url($bck-img);
-      transition: 0.3s ease-in-out;
-
-      &:hover {
-        background-color: white;
-        cursor: pointer;
-        @include background-img(75%);
-        background-image: url($bck-img-blue);
-      }
-}
-
 .sudoku-color {  
-  background-color: #5CA9DB;
+  background-color: $color-skyblue-3;
 }
 
 .instructions-color {
-  background-color: #E6789D;
+  background-color: $color-pink-3;
 }
 
 .ranking-color {
-  background-color: #44B27D;
+  background-color: $color-green-2;
 }
 
 .register-color {
-  background-color: #FF8A62;
+  background-color: $color-orange-3;
 }
 
 .login-color {
-  background-color: #6A70E0;
+  background-color: $color-darkblue-2;
 }
 
 .settings-color {
-  background-color: #FFD662;
+  background-color: $color-yellow-3;
 }
 
 
@@ -54,89 +32,78 @@ nav {
   .link-nav {
 
     .sudoku-nav.sudoku-img {
-      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-blue.svg')
+      @include link-nav('../img/logos/sudoku-blue.svg', $color-white)
     }
 
     .instructions-nav.sudoku-img {
-      @include link-nav('../img/logos/information.svg', '../img/logos/information-blue.svg')
+      @include link-nav('../img/logos/information.svg')
     }
 
     .ranking-nav.sudoku-img {
-      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-blue.svg')
+      @include link-nav('../img/logos/ranking.svg')
     }
 
     .sudoku-nav.instructions-img {
-      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-pink.svg')
+      @include link-nav('../img/logos/sudoku.svg')
     }
 
     .instructions-nav.instructions-img {
-      @include link-nav('../img/logos/information.svg', '../img/logos/information-pink.svg')
+      @include link-nav('../img/logos/information-pink.svg', $color-white)
     }
 
     .ranking-nav.instructions-img {
-      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-pink.svg')
+      @include link-nav('../img/logos/ranking.svg')
     }
 
     .sudoku-nav.ranking-img {
-      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-green.svg')
+      @include link-nav('../img/logos/sudoku.svg')
     }
 
     .instructions-nav.ranking-img {
-      @include link-nav('../img/logos/information.svg', '../img/logos/information-green.svg')
+      @include link-nav('../img/logos/information.svg')
     }
 
     .ranking-nav.ranking-img {
-      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-green.svg')
+      @include link-nav('../img/logos/ranking-green.svg', $color-white)
     }
 
     .sudoku-nav.register-img {
-      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-orange.svg')
+      @include link-nav('../img/logos/sudoku.svg')
     }
 
     .instructions-nav.register-img {
-      @include link-nav('../img/logos/information.svg', '../img/logos/information-orange.svg')
+      @include link-nav('../img/logos/information.svg')
     }
 
     .ranking-nav.register-img {
-      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-orange.svg')
+      @include link-nav('../img/logos/ranking.svg')
     }
 
     .sudoku-nav.login-img {
-      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-magenta.svg')
+      @include link-nav('../img/logos/sudoku.svg')
     }
 
     .instructions-nav.login-img {
-      @include link-nav('../img/logos/information.svg', '../img/logos/information-magenta.svg')
+      @include link-nav('../img/logos/information.svg')
     }
 
     .ranking-nav.login-img {
-      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-magenta.svg')
+      @include link-nav('../img/logos/ranking.svg')
     }
 
     .sudoku-nav.settings-img {
-      @include link-nav('../img/logos/sudoku.svg', '../img/logos/sudoku-yellow.svg')
+      @include link-nav('../img/logos/sudoku.svg')
     }
 
     .instructions-nav.settings-img {
-      @include link-nav('../img/logos/information.svg', '../img/logos/information-yellow.svg')
+      @include link-nav('../img/logos/information.svg')
     }
 
     .ranking-nav.settings-img {
-      @include link-nav('../img/logos/ranking.svg', '../img/logos/ranking-yellow.svg')
+      @include link-nav('../img/logos/ranking.svg')
     }
   }
 }
-
-/* 
-.user-logout {
-  @include background-img(75%);
-  background-image: url('../img/logos/logout.svg');
-}
-
-.logo-1 {
-  @include background-img(75%);
-  background-image: url('../img/logos/sudoku.svg');
-} */
 
 .auth-wrapper {
   display: grid;
@@ -146,51 +113,51 @@ nav {
   .link-nav {
 
     .login-nav.sudoku-img {
-      @include link-nav('../img/logos/login.svg', '../img/logos/login-blue.svg');     
+      @include link-nav('../img/logos/login.svg');     
     }
 
     .register-nav.sudoku-img {
-      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-blue.svg');      
+      @include link-nav('../img/logos/sign-up.svg');      
     }
 
     .login-nav.instructions-img {
-      @include link-nav('../img/logos/login.svg', '../img/logos/login-pink.svg');     
+      @include link-nav('../img/logos/login.svg');     
     }
 
     .register-nav.instructions-img {
-      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-pink.svg');      
+      @include link-nav('../img/logos/sign-up.svg');      
     }
 
     .login-nav.ranking-img {
-      @include link-nav('../img/logos/login.svg', '../img/logos/login-green.svg');     
+      @include link-nav('../img/logos/login.svg');     
     }
 
     .register-nav.ranking-img {
-      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-green.svg');      
+      @include link-nav('../img/logos/sign-up.svg');      
     }
 
     .login-nav.register-img {
-      @include link-nav('../img/logos/login.svg', '../img/logos/login-orange.svg');     
+      @include link-nav('../img/logos/login.svg');     
     }
 
     .register-nav.register-img {
-      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-orange.svg');      
+      @include link-nav('../img/logos/sign-up-orange.svg', $color-white);      
     }
 
     .login-nav.login-img {
-      @include link-nav('../img/logos/login.svg', '../img/logos/login-magenta.svg');     
+      @include link-nav('../img/logos/login-magenta.svg', $color-white);     
     }
 
     .register-nav.login-img {
-      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-magenta.svg');      
+      @include link-nav('../img/logos/sign-up.svg');      
     }
 
     .login-nav.settings-img {
-      @include link-nav('../img/logos/login.svg', '../img/logos/login-yellow.svg');     
+      @include link-nav('../img/logos/login.svg');     
     }
 
     .register-nav.settings-img {
-      @include link-nav('../img/logos/sign-up.svg', '../img/logos/sign-up-yellow.svg');      
+      @include link-nav('../img/logos/sign-up.svg');      
     }
 
   }
@@ -203,74 +170,62 @@ nav {
   .link-nav {
 
     .logout-nav.sudoku-img {
-      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-blue.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/logout.svg');
       border: none;
     }
 
     .settings-nav.sudoku-img {
-      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-blue.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/settings.svg');
       border: none;
     }
 
     .logout-nav.instructions-img {
-      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-pink.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/logout.svg');
       border: none;
     }
 
     .settings-nav.instructions-img {
-      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-pink.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/settings.svg');
       border: none;
     }
 
     .logout-nav.ranking-img {
-      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-green.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/logout.svg');
       border: none;
     }
 
     .settings-nav.ranking-img {
-      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-green.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/settings.svg');
       border: none;
     }
 
     .logout-nav.login-img {
-      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-magenta.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/logout.svg');
       border: none;
     }
 
     .settings-nav.login-img {
-      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-magenta.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/settings.svg');
       border: none;
     }
 
     .logout-nav.register-img {
-      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-orange.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/logout.svg');
       border: none;
     }
 
     .settings-nav.register-img {
-      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-orange.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/settings.svg');
       border: none;
     }
 
     .logout-nav.settings-img {
-      @include link-nav('../img/logos/logout.svg', '../img/logos/logout-yellow.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/logout.svg');
       border: none;
     }
 
     .settings-nav.settings-img {
-      @include link-nav('../img/logos/settings.svg', '../img/logos/settings-yellow.svg');
-      background-color: transparent;
+      @include link-nav('../img/logos/settings-yellow.svg', $color-white);
       border: none;
     }
 

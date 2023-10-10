@@ -24,6 +24,8 @@ export default class App extends Component {
       loggedInStatus: 'NOT_LOGGED_IN',
       name: '',
       email: '',
+      isNotForm: true,
+      noFound: false,
       heightInner: window.innerHeight,
       withInner: window.innerWidth
     }
@@ -34,6 +36,8 @@ export default class App extends Component {
     this.deleteCredentials = this.deleteCredentials.bind(this);
     this.checkLoginStatus = this.checkLoginStatus.bind(this);
     this.checkSize = this.checkSize.bind(this);
+    this.setIsNotForm = this.setIsNotForm.bind(this);
+    this.setNoFound = this.setNoFound.bind(this);
 
     window.addEventListener('resize', this.checkSize)
   }
@@ -81,36 +85,55 @@ export default class App extends Component {
   checkSize() {
     const html = document.querySelector(':root');
 
-    if (window.innerHeight > window.innerWidth) {
-      html.style.setProperty('--width', `${window.innerWidth}px`);
-      html.style.setProperty('--height', `${window.innerHeight}px`);
-    }
-    else {
-      html.style.setProperty('--width', `${window.innerHeight}px`);
-      html.style.setProperty('--height', `${window.innerHeight}px`);
-    }
+    if (this.state.isNotForm) {
 
-    /* if (this.state.heightInner !== window.innerHeight || this.state.withInner !== window.innerWidth) {
-      this.setState({
-        heightInner: window.innerHeight,
-        withInner: window.innerWidth
-      })
-    } */
+      if (window.innerHeight > window.innerWidth) {
+        html.style.setProperty('--width', `${window.innerWidth}px`);
+        html.style.setProperty('--height', `${window.innerHeight}px`);
+      }
+      else {
+        html.style.setProperty('--width', `${window.innerHeight}px`);
+        html.style.setProperty('--height', `${window.innerHeight}px`);
+      }
+    }
   }
+
+  setIsNotForm(value) {
+    const html = document.querySelector(':root');
+
+    this.setState({
+      isNotForm: value
+    });
+
+    if (value) {
+      html.style.setProperty('--overflow', 'hidden');
+    } else {
+      html.style.setProperty('--overflow', 'visible');
+    }
+  }
+
+  setNoFound(value) {
+    this.setState({
+      noFound: value
+    });
+  }
+
 
   componentDidMount() {
     this.checkLoginStatus();
     this.checkSize();
   }
 
-    
+
 
   render() {
     return (
       <div className='container'>
 
         <div className='left-container'>
-          <LeftSide />
+          <LeftSide
+            noFound={this.state.noFound}
+          />
         </div>
         <div className='center-container'>
           <Routes>
@@ -118,8 +141,12 @@ export default class App extends Component {
             <Route path="/" element={
               <Sudokus
                 state={this.state}
+                setNoFound={this.setNoFound}
               />} />
-            <Route path="instructions" element={<Instructions />} />
+            <Route path="instructions" element={
+              <Instructions
+                setNoFound={this.setNoFound}
+              />} />
 
             {
               this.state.loggedInStatus === 'LOGGED_IN' ?
@@ -129,11 +156,15 @@ export default class App extends Component {
                     <LoginPage
                       successfulAuth={this.successfulAuth}
                       setCredentials={this.setCredentials}
+                      setIsNotForm={this.setIsNotForm}
+                      setNoFound={this.setNoFound}
                     />} />
                   <Route path="register" element={
                     <RegisterPage
                       successfulAuth={this.successfulAuth}
                       setCredentials={this.setCredentials}
+                      setIsNotForm={this.setIsNotForm}
+                      setNoFound={this.setNoFound}
                     />} />
                 </>
             }
@@ -146,11 +177,16 @@ export default class App extends Component {
                   <Settings
                     name={this.state.name}
                     email={this.state.email}
+                    setIsNotForm={this.setIsNotForm}
+                    setNoFound={this.setNoFound}
                   />} /> :
                 null
             }
 
-            <Route path="*" element={<NoPage />} />
+            <Route path="*" element={
+              <NoPage
+                setNoFound={this.setNoFound}
+              />} />
 
           </Routes>
         </div>
@@ -159,6 +195,7 @@ export default class App extends Component {
             successfulLogout={this.successfulLogout}
             deleteCredentials={this.deleteCredentials}
             isLoggedIn={this.state.loggedInStatus}
+            noFound={this.state.noFound}
           />
         </div>
 

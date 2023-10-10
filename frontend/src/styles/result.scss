@@ -1,21 +1,12 @@
-@mixin bkg-result($bkg-img) {
-  width: calc(var(--width) * 0.2);
-  height: calc(var(--width) * 0.2);
-  background-image: $bkg-img;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .result-wrapper {
   display: flex;
   height: var(--height);
   width: calc(var(--width) * 0.8);
   flex-direction: column;
-  background-color: #5ca9db;
-  border: 0.25rem solid #b0dcf9;
+  background-color: $color-skyblue-3;
+  border: 0.25rem solid $color-skyblue-1;
   box-sizing: border-box;
-  color: #fff;  
+  color: $color-white;  
 
   .hasard {
     display: flex;
@@ -27,7 +18,7 @@
 
     .hasard-title {
       h2 {
-        color: #80EDB9;
+        color: $color-resultok-0;
         font-size: 1.5rem;
       }
     }
@@ -38,20 +29,20 @@
 
     .hasard-result {
       h3 {
-        color: #80edb9;
+        color: $color-resultok-0;
       }
 
       .hasard-time {
-        color: white;
+        color: $color-white;
         font-weight: 600;
-        font-family: 'Chivo Mono', monospace;
+        font-family: $Chivo;
         width: 6rem;
         display: flex;
         justify-content: center;
         height: 2.2rem;
         align-items: center;
-        background-color: #13bf6c;
-        border: 0.2rem solid #80edb9;
+        background-color: $color-resultok-1;
+        border: 0.2rem solid $color-resultok-0;
         border-radius: 0.25rem;
         margin: auto;
       }
@@ -60,19 +51,17 @@
     .btns-result {
       button {
         background-color: transparent;
-        border: 0.2rem solid #b0dcf9;
-        color: white;
+        border: 0.2rem solid $color-skyblue-1;
+        color: $color-white;
         font-size: 1.2rem;
-        transition: .2s linear;
         width: 8rem;
-        font-family: 'Titan One', cursive;
+        font-family: $Titan;
         height: 2rem;
         border-radius: 0.25rem;
 
-        &:hover {
-          cursor: pointer;
-          color: #5CA9DB;
-          background-color: white;
+        &:active {
+          color: $color-skyblue-3;
+          background-color: $color-white;
         }
       }
     }
@@ -89,7 +78,7 @@
 
     .prosopagnosia-title {
       h2 {
-        color: #FF703F;
+        color: $color-resultnook-0;
         font-size: 1.5rem;
       }      
     }
@@ -99,29 +88,28 @@
     }
 
     .prosopagnosia-suggestion {
-      color: #b0dcf9;
+      color: $color-skyblue-1;
     }
 
     .btns-result {
       width: 100%;
       display: flex;
       justify-content: space-evenly;
+      gap: 1rem;
 
       button {
         background-color: transparent;
-        border: 0.2rem solid #b0dcf9;
-        color: white;
+        border: 0.2rem solid $color-skyblue-1;
+        color: $color-white;
         font-size: 1.2rem;
-        transition: .2s linear;
         width: 8rem;
-        font-family: 'Titan One', cursive;
+        font-family: $Titan;
         height: 2rem;
         border-radius: 0.25rem;
 
-        &:hover {
-          cursor: pointer;
-          color: #5CA9DB;
-          background-color: white;
+        &:active {
+          color: $color-skyblue-3;
+          background-color: $color-white;
         }
       }
     }

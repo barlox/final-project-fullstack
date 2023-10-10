@@ -1,0 +1,113 @@
+@mixin grd {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+@mixin background-img($bck-size: 60%) {
+  background-size: $bck-size;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin link-nav($bck-img-white, $bck-color: transparent) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  @include background-img(75%);
+  background-image: url($bck-img-white);
+  background-color: $bck-color;
+
+  &:active {
+    @include background-img(55%);
+  }
+}
+
+@mixin bkg-result($bkg-img) {
+  width: calc(var(--width) * 0.2);
+  height: calc(var(--width) * 0.2);
+  background-image: $bkg-img;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin forms($bkg-color, $border-color) {
+  width: calc(var(--width) * 0.8);
+  height: var(--height);
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 15% auto;
+  background-color: $bkg-color;
+  color: $color-white;
+  border: 0.25rem solid $border-color;
+  box-sizing: border-box;
+
+  .title-wrapper {
+    align-self: end;
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      font-family: $Kumbh;
+      margin: 0;
+      border-bottom: 0.12rem solid;
+      line-height: 3rem;
+    }
+  }
+}
+
+@mixin inputs($color-color, $border-color, $rows: repeat(4, 1fr)) {
+  display: grid;
+  grid-template-rows: $rows;
+  height: 95%;
+  align-items: center;
+  text-align: center;
+
+  .field-wrapper {
+    display: flex;
+    width: calc(var(--height) * 0.35);
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .input-data {
+      border: 0.2rem solid $border-color;
+      border-radius: 0.25rem;
+      font-size: 0.9rem;
+      padding: 0.5rem;
+      text-align: center;
+      color: $color-color;
+
+      &:focus-visible {
+        outline: 0.12rem solid $color-white;
+      }
+    }
+
+    .label-data {
+      font-size: 1.2rem;
+      font-family: $Kumbh;
+      color: $color-white;
+    }
+  }
+} 
+
+@mixin submits($color-color, $border-color) {
+  .submit-button {
+    width: 8rem;
+    height: 2.5rem;
+    font-family: $Titan;
+    background-color: transparent;
+    border: 0.2rem solid $border-color;
+    font-size: 1.2rem;
+    color: $color-white;
+    border-radius: 0.25rem;
+
+    &:active {
+      background-color: $color-white;
+      color: $color-color;
+    }
+  }
+}
+

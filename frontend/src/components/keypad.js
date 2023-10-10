@@ -1,9 +1,7 @@
 import React from 'react';
-// import '../styles/sudoku-images.scss';
-// import '../styles/buttons.scss';
+
 
 export default function Keypad(props) {
-
 
   const padActive = props.padActive;
   const setObjUSER = props.setObjUSER;

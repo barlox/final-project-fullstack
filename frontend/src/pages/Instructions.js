@@ -1,11 +1,15 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import Carousel from "nuka-carousel";
 import RowColumnRegion from '../components/RowColumnRegion';
-// import '../styles/instructions.scss'
 
 
-const Instructions = () => {
+const Instructions = (props) => {
 
+  useEffect(() => {
+    props.setNoFound(false);
+  }
+    // eslint-disable-next-line
+    , []);
 
   return (
     <Carousel

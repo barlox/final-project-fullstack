@@ -1,0 +1,28 @@
+.container {
+  width: 100vw;
+  height: var(--height);
+  display: grid;
+  grid-template-columns: calc(var(--width) * 0.1) auto calc(var(--width) * 0.1);
+  font-family: $Kumbh; 
+}
+
+.center-container {
+  height: var(--height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../img/backgrounds/white-brick-wall.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .no-found {
+    background-image: url('../img/backgrounds/NoFound-404.svg');
+    width: calc(var(--width) * 0.8);
+    height: var(--height);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 0.25rem solid $color-skyblue-1;
+    box-sizing: border-box;
+  }
+}

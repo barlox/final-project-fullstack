@@ -1,41 +1,13 @@
-@mixin background-img($bck-size) {
-  background-size: $bck-size;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-
 header {
   display: grid;
   height: var(--height);
 }
 
-.sudoku-color {  
-  background-color: #5CA9DB;
-}
-
-.instructions-color {
-  background-color: #FFD662;
-}
-
-.ranking-color {
-  background-color: #44B27D;
-}
-
-.register-color {
-  background-color: #FF8A62;
-}
-
-.login-color {
-  background-color: #FF546D;
-}
-
-
 .brand {
   display: grid;
   grid-template-rows: auto repeat(8, calc(var(--height) * 0.1)) auto;
-  color: #FFFFFF;
-  font-family: 'Saira Stencil One', cursive; 
+  color: $color-white;
+  font-family: $Saira; 
   
   .letter-brand {
     display: flex;
@@ -43,9 +15,9 @@ header {
     align-items: center;
     font-size: 1.5rem;
   }
-  }
+}
 
-  .logo-2 {
-    @include background-img(1.5rem);
-    background-image: url('../img/logos/brain.svg');
-  }  
+.logo-2 {
+  @include background-img(1.5rem);
+  background-image: url('../img/logos/brain.svg');
+}  

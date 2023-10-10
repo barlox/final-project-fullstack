@@ -1,11 +1,5 @@
-@mixin background-img {
-  background-size    : 75%;
-  background-repeat  : no-repeat;
-  background-position: center;
-}
-
 .delete {
-  @include background-img();
+  @include background-img(75%);
   background-image: url('../img/buttons/delete.svg');
 }
 
@@ -16,18 +10,16 @@
   .initial-btn {
     width: 8rem;
     height: 2.5rem;
-    background-color: #5CA9DB;
-    border: 0.2rem solid #B0DCF9;
+    background-color: $color-skyblue-3;
+    border: 0.2rem solid $color-skyblue-1;
     border-radius: 0.25rem;
-    color: white;
+    color: $color-white;
     font-size: 1.2rem;
-    font-family: "Titan One", cursive;
-    transition: 0.2s linear;
+    font-family: $Titan;
 
-    &:hover {
-      cursor: pointer;
-      background-color: white;
-      color: #5CA9DB;
+    &:active {
+      background-color: $color-white;
+      color: $color-skyblue-3;
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
@@ -14,6 +14,12 @@ export default function Settings(props) {
   const [auth, setAuth] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    props.setNoFound(false);
+  },
+    // eslint-disable-next-line
+    []);
 
   const changePassword = (event) => {
 
@@ -39,7 +45,7 @@ export default function Settings(props) {
         passwordNew: newPassword
       })
         .then(response => {
-          console.log(response.data);
+          //console.log(response.data);
           navigate("/");
         })
         .catch(error => {
@@ -83,7 +89,6 @@ export default function Settings(props) {
           </label>
           <input
             type="password"
-            autoFocus
             value={currentPassword}
             onChange={(e) => {
               setCurrentPassword(e.target.value);
@@ -91,6 +96,13 @@ export default function Settings(props) {
               setAuth(false);
             }
             }
+            onClick={() => {
+              setCurrentPasswordField(false);
+              setAuth(false);
+            }
+            }
+            onFocus={() => props.setIsNotForm(false)}
+            onBlur={() => props.setIsNotForm(true)}
             id="currentPassword"
             className={
               `input-data ${currentPasswordField ? 'currentPasswordField' : ''}`
@@ -118,7 +130,15 @@ export default function Settings(props) {
               setNewPassword(e.target.value);
               setNewPasswordField(false);
               setAuth(false);
-            }}
+            }
+            }
+            onClick={() => {
+              setNewPasswordField(false);
+              setAuth(false);
+            }
+            }
+            onFocus={() => props.setIsNotForm(false)}
+            onBlur={() => props.setIsNotForm(true)}
             id="newPassword"
             className={
               `input-data ${newPasswordField ? 'newPasswordField' : ''}`
@@ -146,7 +166,15 @@ export default function Settings(props) {
               setNewPasswordRepeat(e.target.value);
               setNewPasswordRepeatField(false);
               setAuth(false);
-            }}
+            }
+            }
+            onClick={() => {
+              setNewPasswordRepeatField(false);
+              setAuth(false);
+            }
+            }
+            onFocus={() => props.setIsNotForm(false)}
+            onBlur={() => props.setIsNotForm(true)}
             id="newPasswordRepeat"
             className={
               `input-data ${newPasswordRepeatField ? 'newPasswordRepeatField' : ''}`

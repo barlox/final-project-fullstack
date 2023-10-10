@@ -38,7 +38,7 @@ export default class Ranking extends Component {
       num: num
     })
       .then(response => {
-        console.log(response.data);
+        //console.log(response.data);
         this.setState({
           first: response.data.first,
           second: response.data.second,

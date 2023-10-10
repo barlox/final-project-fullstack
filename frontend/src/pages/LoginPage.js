@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-// import '../styles/identity.scss'
-import RecoverPassword from "../components/recoverPassword";
+import RecoverPassword from "../components/RecoverPassword";
 
 
 export default function LoginPage(props) {
@@ -14,6 +13,11 @@ export default function LoginPage(props) {
   const [passwordField, setPasswordField] = useState(false);
   const [auth, setAuth] = useState(false);
 
+  useEffect(() => {
+    props.setNoFound(false);
+  }
+    // eslint-disable-next-line
+    , []);
 
   const navigate = useNavigate();
 
@@ -35,7 +39,7 @@ export default function LoginPage(props) {
         withCredentials: true
       })
         .then(function (response) {
-          console.log(response);
+          //console.log(response);
           //console.log(response.data);
           // setName(response.data.name);
           props.setCredentials({
@@ -71,6 +75,8 @@ export default function LoginPage(props) {
     return (
       <RecoverPassword
         recoverPass={recoverPass}
+        setIsNotForm={props.setIsNotForm}
+        setNoFound={props.setNoFound}
       />
     );
   } else {
@@ -98,7 +104,6 @@ export default function LoginPage(props) {
             </label>
             <input
               type="email"
-              autoFocus
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -106,6 +111,13 @@ export default function LoginPage(props) {
                 setAuth(false);
               }
               }
+              onClick={() => {
+                setEmailField(false);
+                setAuth(false);
+              }
+              }
+              onFocus={() => props.setIsNotForm(false)}
+              onBlur={() => props.setIsNotForm(true)}
               id="loginEmail"
               className={
                 `input-data ${emailField ? 'emailField' : ''}`
@@ -133,7 +145,15 @@ export default function LoginPage(props) {
                 setPassword(e.target.value);
                 setPasswordField(false);
                 setAuth(false);
-              }}
+              }
+              }
+              onClick={() => {
+                setPasswordField(false);
+                setAuth(false);
+              }
+              }
+              onFocus={() => props.setIsNotForm(false)}
+              onBlur={() => props.setIsNotForm(true)}
               id="loginPassword"
               className={
                 `input-data ${passwordField ? 'passwordField' : ''}`

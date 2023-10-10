@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #44b27d;
-  border: 0.25rem solid #9EE4C2;
+  background-color: $color-green-2;
+  border: 0.25rem solid $color-green-0;
   box-sizing: border-box;
 
   .title-ranking {
-    color: white;
+    color: $color-white;
 
     h1 {
       margin: 0;
@@ -21,7 +21,7 @@
 .ranking-podium-wrapper {
   display: grid;
   grid-template-columns: max-content 45% max-content;
-  color: white;
+  color: $color-white;
   justify-items: center;
   justify-content: center;
   width: 90%;
@@ -39,9 +39,9 @@
     .position {
       width: 3.2rem;
       height: 2.8rem;
-      background-color: white;
+      background-color: $color-white;
       border-radius: 0.25rem;
-      border: 0.2rem solid #9ee4c2;
+      border: 0.2rem solid $color-green-0;
       box-sizing: border-box;
     }
   }
@@ -58,9 +58,9 @@
       font-size: 0.85rem;
       align-items: center;
       justify-content: center;
-      background-color: white;
-      color: #44b27d;
-      border: 0.2rem solid #9ee4c2;
+      background-color: $color-white;
+      color: $color-green-2;
+      border: 0.2rem solid $color-green-0;
       border-radius: 0.25rem;
       box-sizing: border-box;
       padding: 0 0.5rem;
@@ -78,12 +78,12 @@
       height: 2.8rem;
       justify-content: center;
       align-items: center;
-      background-color: white;
-      color: #44b27d;
+      background-color: $color-white;
+      color: $color-green-2;
       font-size: 0.85rem;
-      font-family: 'Chivo Mono', monospace;      
+      font-family: $Chivo;      
       border-radius: 0.25rem;
-      border: 0.2rem solid #9ee4c2;
+      border: 0.2rem solid $color-green-0;
       box-sizing: border-box;
       padding: 0 0.5rem;
     }

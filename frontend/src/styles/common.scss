@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'ChivoMono';
+  src: url('../fonts/ChivoMono.woff2');
+}
+
+@font-face {
+  font-family: 'KumbhSans';
+  src: url('../fonts/KumbhSans.woff2');
+}
+
+@font-face {
+  font-family: 'SairaStencilOne';
+  src: url('../fonts/SairaStencilOne.woff2');
+}
+
+@font-face {
+  font-family: 'TitanOne';
+  src: url('../fonts/TitanOne.woff2');
+}
+
+$Titan: 'Titan One', 'TitanOne', cursive;
+$Saira: 'Saira Stencil One', 'SairaStencilOne', cursive;
+$Chivo: 'Chivo Mono', 'ChivoMono', monospace;
+$Kumbh: 'Kumbh Sans', 'KumbhSans', sans-serif;
+
+:root {
+  font-size: calc(var(--height) * 0.026);
+  --width: 100vh;
+  --height: 100vh;
+  --overflow: hidden;
+}
+
+:any-link, button {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: $Kumbh;
+}
+
+html, body {
+  height: var(--height);
+  overflow: var(--overflow);
+}
+
+.input-data {
+  font-family: $Kumbh;
+}
+
+.space-32 {
+  width: 100%;
+  height: calc(var(--height) * 0.05);
+}
+
+.space-16 {
+  width: 100%;
+  height: calc(var(--height) * 0.03);
+}
+
+.space-10vh {
+  height: calc(var(--height) * 0.1);
+  width: 100%;
+}

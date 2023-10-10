@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import SudokuTemplate from "../components/SudokuTemplate";
-import Keypad from "../components/keypad";
+import Keypad from "../components/Keypad";
 import Selection from "../components/Selection";
-// import "../styles/base.scss";
 import Result from "../components/Result";
 import Timer from "../components/Timer";
 import Paused from "../components/Paused";
@@ -30,7 +29,7 @@ class Sudokus extends Component {
       'ObjTODO': { "a1": "", "a2": "", "a3": "", "a4": "", "a5": "", "a6": "", "a7": "", "a8": "", "a9": "", "b1": "", "b2": "", "b3": "", "b4": "", "b5": "", "b6": "", "b7": "", "b8": "", "b9": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "", "c7": "", "c8": "", "c9": "", "d1": "", "d2": "", "d3": "", "d4": "", "d5": "", "d6": "", "d7": "", "d8": "", "d9": "", "e1": "", "e2": "", "e3": "", "e4": "", "e5": "", "e6": "", "e7": "", "e8": "", "e9": "", "f1": "", "f2": "", "f3": "", "f4": "", "f5": "", "f6": "", "f7": "", "f8": "", "f9": "", "g1": "", "g2": "", "g3": "", "g4": "", "g5": "", "g6": "", "g7": "", "g8": "", "g9": "", "h1": "", "h2": "", "h3": "", "h4": "", "h5": "", "h6": "", "h7": "", "h8": "", "h9": "", "i1": "", "i2": "", "i3": "", "i4": "", "i5": "", "i6": "", "i7": "", "i8": "", "i9": "" },
       'ObjUSER': { "a1": "", "a2": "", "a3": "", "a4": "", "a5": "", "a6": "", "a7": "", "a8": "", "a9": "", "b1": "", "b2": "", "b3": "", "b4": "", "b5": "", "b6": "", "b7": "", "b8": "", "b9": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "", "c7": "", "c8": "", "c9": "", "d1": "", "d2": "", "d3": "", "d4": "", "d5": "", "d6": "", "d7": "", "d8": "", "d9": "", "e1": "", "e2": "", "e3": "", "e4": "", "e5": "", "e6": "", "e7": "", "e8": "", "e9": "", "f1": "", "f2": "", "f3": "", "f4": "", "f5": "", "f6": "", "f7": "", "f8": "", "f9": "", "g1": "", "g2": "", "g3": "", "g4": "", "g5": "", "g6": "", "g7": "", "g8": "", "g9": "", "h1": "", "h2": "", "h3": "", "h4": "", "h5": "", "h6": "", "h7": "", "h8": "", "h9": "", "i1": "", "i2": "", "i3": "", "i4": "", "i5": "", "i6": "", "i7": "", "i8": "", "i9": "" },
       'ObjUSER_TODO': {}
-    };
+    };    
 
 
     this.getNewSudokuTodo = this.getNewSudokuTodo.bind(this);
@@ -38,7 +37,6 @@ class Sudokus extends Component {
     this.setObjUSER = this.setObjUSER.bind(this);
     this.setPadActive = this.setPadActive.bind(this);
     this.setKey = this.setKey.bind(this);
-    // this.setObjUSER_TODO = this.setObjUSER_TODO.bind(this);
     this.selectActive = this.selectActive.bind(this);
     this.setCategory = this.setCategory.bind(this);
     this.setNum = this.setNum.bind(this);
@@ -65,7 +63,7 @@ class Sudokus extends Component {
       mode: this.state.mode
     })
       .then((response) => {
-        console.log(response);
+        //console.log(response);
 
         this.setState({
           [this.state.mode]: JSON.parse(response.data['result'])
@@ -93,7 +91,7 @@ class Sudokus extends Component {
       completed: sudokuToCheck
     })
       .then((response) => {
-        console.log(response);
+        //console.log(response);
         if (response.data['result'] === 'ok') {
           this.setState({
             'serendipity': 'hasard'
@@ -309,6 +307,10 @@ class Sudokus extends Component {
 
   componentWillUnmount() {
     this.resetTime();
+  }
+
+  componentDidMount() {
+    this.props.setNoFound(false);
   }
 
 

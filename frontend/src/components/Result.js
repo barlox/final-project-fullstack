@@ -21,7 +21,7 @@ export default function Result(props) {
       attemp: 1
     })
       .then(function (response) {
-        console.log(response);
+        //console.log(response);
       })
       .catch(function (error) {
         console.log(error, 'error');

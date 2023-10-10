@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation } from 'react-router-dom';
-// import '../styles/header.scss';
 
 
 export default function LeftSide(props) {
@@ -8,30 +7,33 @@ export default function LeftSide(props) {
   let classStyle = '';
   let location = useLocation();
 
-  
-
-  switch (location.pathname) {
-    case '/':
-      classStyle = 'sudoku-color';
-      break;
-    case '/instructions':
-      classStyle = 'instructions-color';
-      break;
-    case '/ranking':
-      classStyle = 'ranking-color';
-      break;
-    case '/login':
-      classStyle = 'login-color';
-      break;
-    case '/register':
-      classStyle = 'register-color';
-      break;
-    case '/settings':
-      classStyle = 'settings-color';
-      break;
-    default:
-      classStyle = 'sudoku-color';
+  if (props.noFound) {
+    classStyle = 'sudoku-color';
+  } else {
+    switch (location.pathname) {
+      case '/':
+        classStyle = 'sudoku-color';
+        break;
+      case '/instructions':
+        classStyle = 'instructions-color';
+        break;
+      case '/ranking':
+        classStyle = 'ranking-color';
+        break;
+      case '/login':
+        classStyle = 'login-color';
+        break;
+      case '/register':
+        classStyle = 'register-color';
+        break;
+      case '/settings':
+        classStyle = 'settings-color';
+        break;
+      default:
+        classStyle = 'sudoku-color';
+    }
   }
+
 
   return (
     <header

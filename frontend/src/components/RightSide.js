@@ -2,42 +2,47 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import Authorization from "./Authorization";
 import Logout from "./Logout";
-// import '../styles/navigation.scss'
 
 
 export default function RightSide(props) {
 
   let classStyle = '', classImage = '';
-  let location = useLocation();  
+  let location = useLocation();
 
-  switch (location.pathname) {
-    case '/':
-      classStyle = 'sudoku-color';
-      classImage = 'sudoku-img';
-      break;
-    case '/instructions':
-      classStyle = 'instructions-color';
-      classImage = 'instructions-img';
-      break;
-    case '/ranking':
-      classStyle = 'ranking-color';
-      classImage = 'ranking-img';
-      break;
-    case '/login':
-      classStyle = 'login-color';
-      classImage = 'login-img';
-      break;
-    case '/register':
-      classStyle = 'register-color';
-      classImage = 'register-img';
-      break;
-    case '/settings':
-      classStyle = 'settings-color';
-      classImage = 'settings-img';
-      break;
-    default:
-      classStyle = 'sudoku-color';
-      classImage = 'sudoku-img';
+
+  if (props.noFound) {
+    classStyle = 'sudoku-color';
+    classImage = 'sudoku-img';
+  } else {
+    switch (location.pathname) {
+      case '/':
+        classStyle = 'sudoku-color';
+        classImage = 'sudoku-img';
+        break;
+      case '/instructions':
+        classStyle = 'instructions-color';
+        classImage = 'instructions-img';
+        break;
+      case '/ranking':
+        classStyle = 'ranking-color';
+        classImage = 'ranking-img';
+        break;
+      case '/login':
+        classStyle = 'login-color';
+        classImage = 'login-img';
+        break;
+      case '/register':
+        classStyle = 'register-color';
+        classImage = 'register-img';
+        break;
+      case '/settings':
+        classStyle = 'settings-color';
+        classImage = 'settings-img';
+        break;
+      default:
+        classStyle = 'sudoku-color';
+        classImage = 'sudoku-img';
+    }
   }
 
 

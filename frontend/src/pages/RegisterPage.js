@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +14,12 @@ export default function RegisterPage(props) {
   const [auth, setAuth] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    props.setNoFound(false);
+  }
+    // eslint-disable-next-line
+    , []);
 
   const registerUser = (event) => {
     event.preventDefault();
@@ -35,7 +41,7 @@ export default function RegisterPage(props) {
         withCredentials: true
       })
         .then(function (response) {
-          console.log(response);
+          //console.log(response);
           props.setCredentials({
             name: name,
             email: email
@@ -46,7 +52,6 @@ export default function RegisterPage(props) {
         .catch(function (error) {
           console.log(error, 'error');
           if (error.response.status === 409) {
-            // setAuth('The name or email already exists');
             setAuth(error.response.data.error);
           } else {
             setAuth('Server failure');
@@ -81,8 +86,7 @@ export default function RegisterPage(props) {
           </label>
           <input
             type="text"
-            autoFocus
-            maxLength={14}
+            maxLength={12}
             value={name}
             onChange={(e) => {
               setName(e.target.value);
@@ -90,6 +94,13 @@ export default function RegisterPage(props) {
               setAuth(false);
             }
             }
+            onClick={() => {
+              setNameField(false);
+              setAuth(false);
+            }
+            }
+            onFocus={() => props.setIsNotForm(false)}
+            onBlur={() => props.setIsNotForm(true)}
             id="register-name"
             className={
               `input-data ${nameField ? 'nameField' : ''}`
@@ -118,6 +129,13 @@ export default function RegisterPage(props) {
               setAuth(false);
             }
             }
+            onClick={() => {
+              setEmailField(false);
+              setAuth(false);
+            }
+            }
+            onFocus={() => props.setIsNotForm(false)}
+            onBlur={() => props.setIsNotForm(true)}
             id="register-email"
             className={
               `input-data ${emailField ? 'emailField' : ''}`
@@ -145,7 +163,15 @@ export default function RegisterPage(props) {
               setPassword(e.target.value);
               setPasswordField(false);
               setAuth(false);
-            }}
+            }
+            }
+            onClick={() => {
+              setPasswordField(false);
+              setAuth(false);
+            }
+            }
+            onFocus={() => props.setIsNotForm(false)}
+            onBlur={() => props.setIsNotForm(true)}
             id="register-password"
             className={
               `input-data ${passwordField ? 'passwordField' : ''}`

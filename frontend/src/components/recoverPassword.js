@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
 
@@ -7,6 +7,12 @@ export default function RecoverPassword(props) {
   const [email, setEmail] = useState('');
   const [emailField, setEmailField] = useState(false);
   const [auth, setAuth] = useState(false);
+
+  useEffect(() => {
+    props.setNoFound(false);
+  }
+    // eslint-disable-next-line
+    , []);
 
   const recover = (event) => {
 
@@ -22,7 +28,7 @@ export default function RecoverPassword(props) {
         withCredentials: true
       })
         .then(function (response) {
-          console.log(response);
+          //console.log(response);
           props.recoverPass();
 
         })
@@ -74,7 +80,6 @@ export default function RecoverPassword(props) {
           </label>
           <input
             type="email"
-            autoFocus
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -82,6 +87,13 @@ export default function RecoverPassword(props) {
               setAuth(false);
             }
             }
+            onClick={() => {
+              setEmailField(false);
+              setAuth(false);
+            }
+            }
+            onFocus={() => props.setIsNotForm(false)}
+            onBlur={() => props.setIsNotForm(true)}
             id="recoverEmail"
             className={
               `input-data ${emailField ? 'emailField' : null}`
