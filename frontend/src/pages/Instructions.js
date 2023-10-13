@@ -45,7 +45,7 @@ const Instructions = (props) => {
       <div className='slide-wrapper slide-3'>
         <h1>Game rules</h1>
         <h2>Columns</h2>
-        <div className='space-16'></div>
+        {/* <div className='space-16'></div> */}
         <div className='slide-content-wrapper'>
           <RowColumnRegion />
           <div className='slide-content'>

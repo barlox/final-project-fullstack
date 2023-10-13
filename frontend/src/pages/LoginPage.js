@@ -21,6 +21,7 @@ export default function LoginPage(props) {
 
   const navigate = useNavigate();
 
+
   const logInUser = (event) => {
 
     event.preventDefault();
@@ -39,14 +40,12 @@ export default function LoginPage(props) {
         withCredentials: true
       })
         .then(function (response) {
-          //console.log(response);
-          //console.log(response.data);
-          // setName(response.data.name);
           props.setCredentials({
             name: response.data.name,
             email: email
           });
           props.successfulAuth();
+          props.setIsNotForm(true);
           navigate("/");
         })
         .catch(function (error) {

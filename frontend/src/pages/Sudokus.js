@@ -63,8 +63,6 @@ class Sudokus extends Component {
       mode: this.state.mode
     })
       .then((response) => {
-        //console.log(response);
-
         this.setState({
           [this.state.mode]: JSON.parse(response.data['result'])
         });
@@ -91,7 +89,6 @@ class Sudokus extends Component {
       completed: sudokuToCheck
     })
       .then((response) => {
-        //console.log(response);
         if (response.data['result'] === 'ok') {
           this.setState({
             'serendipity': 'hasard'

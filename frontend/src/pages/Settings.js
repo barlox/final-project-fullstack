@@ -12,15 +12,17 @@ export default function Settings(props) {
   const [newPasswordField, setNewPasswordField] = useState(false);
   const [newPasswordRepeatField, setNewPasswordRepeatField] = useState(false);
   const [auth, setAuth] = useState(false);
-
+  
   const navigate = useNavigate();
+
 
   useEffect(() => {
     props.setNoFound(false);
   },
     // eslint-disable-next-line
     []);
-
+    
+  
   const changePassword = (event) => {
 
     event.preventDefault();
@@ -45,7 +47,7 @@ export default function Settings(props) {
         passwordNew: newPassword
       })
         .then(response => {
-          //console.log(response.data);
+          props.setIsNotForm(true);
           navigate("/");
         })
         .catch(error => {

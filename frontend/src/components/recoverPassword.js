@@ -28,7 +28,7 @@ export default function RecoverPassword(props) {
         withCredentials: true
       })
         .then(function (response) {
-          //console.log(response);
+          props.setIsNotForm(true);
           props.recoverPass();
 
         })

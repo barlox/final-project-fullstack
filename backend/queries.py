@@ -160,5 +160,3 @@ def checkUser(name, email, password):
     else:
         return "not found"
     
-
-#print(checkUser('barloa', 'barloa@gmx.es', '123'))

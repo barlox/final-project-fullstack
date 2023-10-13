@@ -37,7 +37,6 @@ export default function Logout(props) {
   const logout = () => {
     axios.get('https://sudokers.eu.pythonanywhere.com/logout')
       .then(function (response) {
-        //console.log(response);
         //console.log(response.data);
         props.successfulLogout();
         props.deleteCredentials();

@@ -120,6 +120,7 @@ export default class Ranking extends Component {
 
   componentDidMount() {
     this.getRankings(this.categoryName[this.state.selectedCategory].toLowerCase(), `${this.state.selectedNumber}`);
+    this.props.setNoFound(false);
   }
 
 

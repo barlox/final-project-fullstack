@@ -14,7 +14,7 @@
     width: 75%;
     height: 100%;
     align-items: center;  
-    justify-content: center;
+    justify-content: center;    
 
     h1 {
       text-align: center;
@@ -187,4 +187,9 @@
       font-weight: 600;
     }
   }
+}
+
+.slide-wrapper.slide-3 {
+  align-items: start;
+  grid-template-rows: max-content 4rem auto;
 }

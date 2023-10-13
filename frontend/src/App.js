@@ -26,8 +26,8 @@ export default class App extends Component {
       email: '',
       isNotForm: true,
       noFound: false,
-      heightInner: window.innerHeight,
-      withInner: window.innerWidth
+      height: window.innerHeight,
+      width: window.innerWidth
     }
 
     this.successfulAuth = this.successfulAuth.bind(this);
@@ -39,7 +39,6 @@ export default class App extends Component {
     this.setIsNotForm = this.setIsNotForm.bind(this);
     this.setNoFound = this.setNoFound.bind(this);
 
-    window.addEventListener('resize', this.checkSize)
   }
 
   successfulAuth() {
@@ -89,11 +88,11 @@ export default class App extends Component {
 
       if (window.innerHeight > window.innerWidth) {
         html.style.setProperty('--width', `${window.innerWidth}px`);
-        html.style.setProperty('--height', `${window.innerHeight}px`);
+        html.style.setProperty('--height', `${window.innerHeight}px`);        
       }
       else {
         html.style.setProperty('--width', `${window.innerHeight}px`);
-        html.style.setProperty('--height', `${window.innerHeight}px`);
+        html.style.setProperty('--height', `${window.innerHeight}px`);        
       }
     }
   }
@@ -116,17 +115,17 @@ export default class App extends Component {
     this.setState({
       noFound: value
     });
-  }
-
-
+  } 
+ 
   componentDidMount() {
     this.checkLoginStatus();
     this.checkSize();
   }
 
 
-
   render() {
+    window.addEventListener('resize', this.checkSize); 
+
     return (
       <div className='container'>
 
@@ -169,7 +168,10 @@ export default class App extends Component {
                 </>
             }
 
-            <Route path="ranking" element={<Ranking />} />
+            <Route path="ranking" element={
+              <Ranking
+                setNoFound={this.setNoFound}
+              />} />
 
             {
               this.state.loggedInStatus === 'LOGGED_IN' ?
@@ -179,6 +181,7 @@ export default class App extends Component {
                     email={this.state.email}
                     setIsNotForm={this.setIsNotForm}
                     setNoFound={this.setNoFound}
+                    isNotForm={this.state.isNotForm}
                   />} /> :
                 null
             }

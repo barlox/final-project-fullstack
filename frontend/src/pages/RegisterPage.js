@@ -41,7 +41,7 @@ export default function RegisterPage(props) {
         withCredentials: true
       })
         .then(function (response) {
-          //console.log(response);
+          props.setIsNotForm(true);
           props.setCredentials({
             name: name,
             email: email
