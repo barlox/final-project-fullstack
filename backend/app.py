@@ -7,6 +7,7 @@ from flask_login import UserMixin, LoginManager, login_user, login_required, log
 from forgotPassword import sendMail
 import updateTables
 import postTables
+import deleteRegisters
 import queries
 from datetime import timedelta
 
@@ -279,6 +280,30 @@ def changePassword():
             return jsonify(update), 409
         else:
             return jsonify(update)
+    elif (check == "incorrect"):
+        return jsonify({"result": "password incorrect"}), 401
+    elif (check == "not found"):
+        return jsonify({"result": "not found"}), 404
+    else:
+        return jsonify({"result": "error"}), 500
+
+
+
+@app.delete("/deleteuser")
+def deleteUser():
+    name = request.json['name']
+    email = request.json['email']
+    password = request.json['password']
+
+    check = queries.checkUser(name, email, password)
+    result = ""
+
+    if (check == "correct"):
+        delete = deleteRegisters.deleteUser(name, email)
+        if (delete['result'] == 'no deleted'):
+            return jsonify(delete), 409
+        else:
+            return jsonify(delete)
     elif (check == "incorrect"):
         return jsonify({"result": "password incorrect"}), 401
     elif (check == "not found"):
