@@ -19,7 +19,7 @@ app = Flask(__name__, static_folder='./build', static_url_path='/')
    Settings
 """
 
-app.config['SECRET_KEY'] = '7PPI7KIDSg51G5XZOThdtOVu_c_2gbA1gx6y_JxME5dybvUR97P7k17NDZmqaU-MPkUI-3LTGykagGZD7wpcJyLnAOCWpdoTtxsPUMKaJEY'
+app.config['SECRET_KEY'] = 'JxME5dybvUR97P7k17NDZmqaU-MPkUI-3LTGykagGZD7wpcJyLnAOCWpdoTtxsPUMKaJEY'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:barlox69@localhost:3306/sudokers'
 
 db = SQLAlchemy(app)

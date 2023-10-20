@@ -70,6 +70,11 @@ I have incorporated several features not learned in the course, such as **Flask-
 - Code quality
 - Problem resolution
 
+### Features not learned in the course
+- Flask-Login
+- SendGridAPIClient
+- nuka-carousel
+
 ## Project development
 
 ### Why?
