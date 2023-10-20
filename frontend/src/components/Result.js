@@ -4,6 +4,11 @@ import axios from 'axios';
 
 export default function Result(props) {
 
+  /**
+   * parseTime 
+   * Convert time to seconds
+   */
+
   const parseTime = time => {
     let total = 0;
     total += time.getHours() * 3600;
@@ -12,7 +17,13 @@ export default function Result(props) {
     return total;
   }
 
-  const updateRanking = () => {
+  /**
+   * postRanking 
+   * Send the result to be included in the Ranking
+   * if (props.loggedInStatus === 'LOGGED_IN' && props.serendipity === 'hasard')
+   */
+
+  const postRanking = () => {
     axios.post('https://sudokers.eu.pythonanywhere.com/ranking/checkRanking', {
       name: props.name,
       category: props.category,
@@ -30,7 +41,7 @@ export default function Result(props) {
 
   useEffect(() => {
     if (props.loggedInStatus === 'LOGGED_IN' && props.serendipity === 'hasard') {
-      updateRanking();
+      postRanking();
     };
     // eslint-disable-next-line 
   }, []);

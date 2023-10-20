@@ -10,6 +10,8 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 
+# Delete the requested user from the database
+
 def deleteUser(name, email):
     
     try:

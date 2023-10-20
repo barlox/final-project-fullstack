@@ -10,6 +10,8 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 
+# Function used to change the password
+
 def updateUser(email, password):
   
   try:    

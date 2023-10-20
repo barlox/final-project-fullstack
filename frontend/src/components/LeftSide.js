@@ -7,6 +7,11 @@ export default function LeftSide(props) {
   let classStyle = '';
   let location = useLocation();
 
+  /**
+   * This conditional adds a different class to 
+   * the Header component, depending on the location
+   */
+
   if (props.noFound) {
     classStyle = 'sudoku-color';
   } else {

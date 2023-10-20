@@ -5,6 +5,9 @@ import secrets
 import string
 
 
+# Send a password generated with the passWord function 
+# to the recovery email provided through SendGridAPIClient
+
 def passWord():
 	alphabet = '90+5*1{}3-2&7@4$86'.format(string.ascii_letters)
 	password = ''.join(secrets.choice(alphabet) for i in range(16))
@@ -32,9 +35,8 @@ def sendMail(name, email):
 			subject='Sudokers recovery',
 			html_content=content)
 
-		#sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-		#	'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'
-		sg = SendGridAPIClient('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')
+		sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+		
 		sg.send(message)
 
 		return {

@@ -5,7 +5,18 @@ import axios from 'axios';
 
 export default function Settings(props) {
 
+  /**
+   * action 
+   * Page is shared to change password or delete user account.
+   * Changing the action state defines what is rendered
+   */
+
   const [action, setAction] = useState('update');
+
+  /**
+   * All variables that have an initial value of false
+   * serve to inform the user of errors
+   */
 
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');

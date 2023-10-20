@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+   * This component generates the sudoku grid and its characteristics
+   */
+
 
 export default function SudokuTemplate(props) {
 

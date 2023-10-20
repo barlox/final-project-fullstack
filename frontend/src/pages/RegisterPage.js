@@ -5,6 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function RegisterPage(props) {
 
+  /**
+   * nameField, emailField, passwordField and auth
+   * They serve to inform the user of errors
+   */
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,6 +28,7 @@ export default function RegisterPage(props) {
 
   const registerUser = (event) => {
     event.preventDefault();
+    
     if (name.length === 0) {
       setNameField('Name not completed!');
     }

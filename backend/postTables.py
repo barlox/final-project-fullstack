@@ -10,6 +10,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 
+# Adds the result of a correctly completed sudoku to the ranking table
 
 def postRanking(result):
   

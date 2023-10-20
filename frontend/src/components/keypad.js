@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+   * This component is responsible for sending the selected
+   * image or number to the selected sudoku box.
+   */
+
 
 export default function Keypad(props) {
 

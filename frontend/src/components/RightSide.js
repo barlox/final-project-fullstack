@@ -9,6 +9,11 @@ export default function RightSide(props) {
   let classStyle = '', classImage = '';
   let location = useLocation();
 
+  /**
+   * This conditional adds a different class to 
+   * the Nav component, depending on the location
+   */
+
 
   if (props.noFound) {
     classStyle = 'sudoku-color';

@@ -31,9 +31,13 @@ export default class Ranking extends Component {
     this.getTime = this.getTime.bind(this);
   }
 
+  /**
+   * getRankings 
+   * Request the three best times based on category and number of sudoku
+   */
 
   getRankings(category, num) {
-    axios.post('https://sudokers.eu.pythonanywhere.com/searchTopRankings', {
+    axios.get('https://sudokers.eu.pythonanywhere.com/searchTopRankings', {
       category: category,
       num: num
     })
@@ -50,6 +54,10 @@ export default class Ranking extends Component {
       })
   }
 
+  /**
+   * getTime 
+   * Convert seconds to hours, minutes and seconds
+   */
 
   getTime(time) {
     function twoChar(value) {
@@ -73,6 +81,10 @@ export default class Ranking extends Component {
     }
   }
 
+   /**
+   * selectRanking 
+   * Used to select category and number (plus and minus buttons)
+   */
 
   selectRanking(operation, type) {
 

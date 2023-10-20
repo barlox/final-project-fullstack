@@ -4,6 +4,11 @@ import axios from 'axios';
 
 export default function RecoverPassword(props) {
 
+  /**
+   * emailField and auth 
+   * They serve to inform the user of errors
+   */
+
   const [email, setEmail] = useState('');
   const [emailField, setEmailField] = useState(false);
   const [auth, setAuth] = useState(false);
@@ -22,7 +27,7 @@ export default function RecoverPassword(props) {
       setEmailField('Email not completed!');
     }
     else {
-      axios.post('https://sudokers.eu.pythonanywhere.com/forgotPassword', {
+      axios.patch('https://sudokers.eu.pythonanywhere.com/forgotPassword', {
         email: email
       }, {
         withCredentials: true

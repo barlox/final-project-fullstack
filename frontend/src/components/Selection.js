@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 
+/**
+   * This component is used for the sudoku
+   * category and number selection screens.
+   */
+
 
 export default function Selection(props) {
 

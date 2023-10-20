@@ -112,29 +112,6 @@ ranking_schema = RankingSchema()
 rankings_schema = RankingSchema(many=True)
 
 
-class Image(db.Model):
-    __tablename__ = 'svg'
-    id = db.Column(db.Integer, primary_key=True)
-    img = db.Column(db.LargeBinary)
-    category = db.Column(db.String(100))
-    name = db.Column(db.String(100), unique=True)
-    num = db.Column(db.String(10))
-
-    def __init__(self, img, category, name, num):
-        self.img = img
-        self.category = category
-        self.name = name
-        self.num = num
-
-
-class ImageSchema(ma.Schema):
-    class Meta:
-        fields = ('img', 'category', 'name', 'num')
-
-
-image_schema = ImageSchema()
-images_schema = ImageSchema(many=True)
-
 
 @login_manager.user_loader
 def load_user(id):
@@ -146,6 +123,8 @@ def load_user(id):
 """
 
 
+# All routes are included in case the page is reloaded from any of them
+
 @app.route('/')
 @app.route('/instructions')
 @app.route('/login')
@@ -156,10 +135,13 @@ def index():
     return app.send_static_file('index.html')
 
 
+# If the requested resource is not found, the frontend will handle the error
+
 @app.errorhandler(404)
 def not_found(e):
 
     return app.send_static_file('index.html')
+
 
 
 @app.route("/signup", methods=["POST"])
@@ -192,6 +174,7 @@ def signup():
     })
 
 
+
 @app.route("/login", methods=["POST"])
 def login():
     email = request.json["email"]
@@ -214,7 +197,9 @@ def login():
     })
 
 
-@app.post('/forgotPassword')
+# Send new password to registration email
+
+@app.patch('/forgotPassword')
 def recovery():
     email = request.json['email']
 
@@ -237,6 +222,7 @@ def recovery():
                         }), 500
 
 
+
 @app.get("/logout")
 def logout():
     logout_user()
@@ -244,6 +230,8 @@ def logout():
         "message": 'logout'
     })
 
+
+# Check if the user is already logged in
 
 @app.get("/islogged")
 def islogged():
@@ -312,7 +300,9 @@ def deleteUser():
         return jsonify({"result": "error"}), 500
 
 
-@app.post('/sudokus')
+# Returns an array in JSON format with the requested sudoku to do
+
+@app.get('/sudokus')
 def sudo_search():
     category = request.json['category']
     num = request.json['num']
@@ -325,8 +315,10 @@ def sudo_search():
     })
 
 
-@app.post('/sudokuCheck')
-def sudo_check():
+# Check if the sudoku made by the user is correct
+
+@app.get('/sudokuCheck')
+def sudoCheck():
     category = request.json['category']
     num = request.json['num']
     completed = request.json['completed']
@@ -338,8 +330,10 @@ def sudo_check():
     })
 
 
+# Checks if the user has already done the same sudoku, and if so, adds an attempt
+
 @app.post('/ranking/checkRanking')
-def sudokuCheck():
+def sudokuPost():
     name = request.json['name']
     category = request.json['category']
     num = request.json['num']
@@ -352,6 +346,7 @@ def sudokuCheck():
     return jsonify(final_result)
 
 
+
 @app.get('/rankings')
 def get_rankings():
     all_rankings = Ranking.query.all()
@@ -361,7 +356,9 @@ def get_rankings():
     return jsonify(result)
 
 
-@app.post('/searchTopRankings')
+# Returns the three best sudokus of the requested category and number
+
+@app.get('/searchTopRankings')
 def topRankings():
     category = request.json['category']
     num = request.json['num']

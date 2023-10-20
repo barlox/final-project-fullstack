@@ -12,6 +12,45 @@ class Sudokus extends Component {
   constructor(props) {
     super(props);
 
+    /**
+   * todo 
+   * In this array the sudoku to be performed will be stored
+   * 
+   * padActive
+   * true when an active sudoku square is selected
+   * 
+   * keyActive
+   * It is the id of the selected box
+   * 
+   * selectActive
+   * It is true by clicking the Select button and selecting
+   * the category and number of sudoku to play
+   *  
+   * serendipity
+   * It is false, as long as the entire sudoku has not been completed.
+   * Once completed, it is the condition to make a request to the server
+   * to check the result of the sudoku, serendipity, will be its value if
+   *  it is correct and hazard if it is incorrect
+   * 
+   * time
+   * Stores the instance of the Date object
+   * 
+   * playTime
+   * Stores the value of setInterval for time management
+   * 
+   * isPaused
+   * true, if the game is paused
+   * 
+   * initial
+   * Stores the welcome message that appears in the sudoku
+   * 
+   * ObjTODO, ObjUSER and ObjUSER_TODO
+   * Stores as an object the key that will be the id of the box,
+   * and the associated value, of the sudoku to be done,
+   * the one the user is filling in,
+   * and the two together, respectively.
+   */
+
     this.state = {
       'todo': [],
       'num': '',
@@ -57,7 +96,7 @@ class Sudokus extends Component {
   }
 
   getNewSudokuTodo(value) {
-    axios.post('https://sudokers.eu.pythonanywhere.com/sudokus', {
+    axios.get('https://sudokers.eu.pythonanywhere.com/sudokus', {
       category: this.state.category,
       num: value,
       mode: this.state.mode
@@ -83,7 +122,7 @@ class Sudokus extends Component {
   }
 
   checkSudokuCompleted(num, category, sudokuToCheck) {
-    axios.post('https://sudokers.eu.pythonanywhere.com/sudokuCheck', {
+    axios.get('https://sudokers.eu.pythonanywhere.com/sudokuCheck', {
       num: num,
       category: category,
       completed: sudokuToCheck

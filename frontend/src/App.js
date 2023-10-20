@@ -20,6 +20,12 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
+    /**
+   * isNotForm 
+   * It will be false when the rendered page contains a form and
+   * prevent checkSize from acting (below I explain what it is for)
+   */
+
     this.state = {
       loggedInStatus: 'NOT_LOGGED_IN',
       name: '',
@@ -80,6 +86,13 @@ export default class App extends Component {
         console.log(error);
       })
   }
+
+  /**
+   * checkSize 
+   * This function is used to make the application responsive,
+   * using it with an event handler 
+   * window.addEventListener('resize', this.checkSize)
+   */
 
   checkSize() {
     const html = document.querySelector(':root');

@@ -13,7 +13,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 
-# Consulta que devuelve el nombre de usuario en función del email
+# Query that returns the username based on the email
 
 def checkUsername(email):
 
@@ -26,7 +26,7 @@ def checkUsername(email):
     return myresult[0][1]
 
 
-# Consulta que devuelve un dict en función de si hay existe algún resultado coincidente (sumaria un attemp)
+# Query that returns a dict based on whether there is a matching result (summary an attemp)
 
 def checkRanking(name, category, num, time, attemp):
 
@@ -57,7 +57,7 @@ def checkRanking(name, category, num, time, attemp):
         }
 
 
-# Consulta que solicita los tres registros de menor tiempo por category y num
+# Query that requests the three records with the shortest time by category and number
 
 def searchTopRankings(category, num):
 
@@ -101,19 +101,11 @@ def searchTopRankings(category, num):
         }
 
 
-# Consulta que devuelve el sudoku para hacer (todo) o el completado (total)
+# Query that returns the sudoku to do (all) or the completed one (total) depending on the mode
 
 
 def searchSudoku(category, num, mode):
-    """ mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        passwd="barlox69",
-        database="sudokers"
-    )
-
-    mycursor = mydb.cursor() """
-
+    
     sql = "SELECT {} FROM sudokus WHERE category = '{}' AND num = '{}'".format(
         mode, category, num)
 
@@ -123,6 +115,8 @@ def searchSudoku(category, num, mode):
 
     return myresult[0]
 
+
+# Check if the sudoku sent is correct
 
 def checkSudokuCompleted(category, num, completed):
 
@@ -141,7 +135,9 @@ def checkSudokuCompleted(category, num, completed):
         return 'ok'
     else:
         return 'not ok'
+    
 
+# Check if the username, email and password match
 
 def checkUser(name, email, password):
 
