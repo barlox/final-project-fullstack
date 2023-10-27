@@ -30,7 +30,7 @@ def sendMail(name, email):
 		</div>  '''.format(name, password)
 
 		message = Mail(
-			from_email='sudokers@gmx.com',
+			from_email='sudokus@gmx.com',
 			to_emails=email,
 			subject='Sudokers recovery',
 			html_content=content)

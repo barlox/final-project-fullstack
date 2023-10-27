@@ -6,7 +6,7 @@ from werkzeug.security import check_password_hash
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="barlox69",
+    passwd="password",
     database="sudokers"
 )
 
