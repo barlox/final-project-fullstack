@@ -35,7 +35,7 @@ def sendMail(name, email):
 			subject='Sudokers recovery',
 			html_content=content)
 
-		sg = SendAPIClient(os.environ.get('SENDGRID_API_KEY'))
+		sg = SendAPIClient(os.environ.get('SEND_API_KEY'))
 		
 		sg.send(message)
 
